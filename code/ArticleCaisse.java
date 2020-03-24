@@ -1,3 +1,5 @@
+//package donnee;
+
 /**
  * <!-- begin-user-doc -->
  * <!--  end-user-doc  -->
@@ -19,16 +21,10 @@ public class ArticleCaisse implements Article
 	}
 
 	public String toSTring(){
-		StringBuilder sb = new StringBuilder("");
+		String str = new String();
+		str = Article.name + " : \n" + Integer.toString(Article.quantity) + "\t" + Integer.toString(Article.price) + " €\n";
 
-		sb.append(this.name);
-		sb.append( " : ");
-		sb.append(this.quantity);
-		sb.append("\t");
-		sb.append(this.price);
-		sb.append("€");
-
-		return sb.toString();
+		return str;
 	}
 }
 

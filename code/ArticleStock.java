@@ -1,4 +1,4 @@
-package Donnee ;
+//package Donnee ;
 
 
 /**
@@ -46,5 +46,13 @@ public class ArticleStock implements Article
 		super();
 	}
 
+	public String toSTring(){
+		String str = new String();
+		str = Article.name + " : \n" + Integer.toString(Article.quantity) + "(" +
+			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +
+			Integer.toString(Article.price) + " €\n";
+
+		return str;
+	}
 }
 
