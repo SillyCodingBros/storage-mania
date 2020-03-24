@@ -32,7 +32,7 @@ public interface Article
      * @ordered
      */
 
-    public int inbound = 0;
+    public int price = 0;
 
 }
 
