@@ -1,6 +1,3 @@
-package Donnee ;
-
-
 /**
  * <!-- begin-user-doc -->
  * <!--  end-user-doc  -->
@@ -14,8 +11,11 @@ public class ArticleCaisse implements Article
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public ArticleCaisse(){
+	public ArticleCaisse(String name, int price, int quantity){
 		super();
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
 	}
 
 	public String toSTring(){
@@ -28,7 +28,7 @@ public class ArticleCaisse implements Article
 		sb.append(this.price);
 		sb.append("€");
 
-		return sb.toString();		
+		return sb.toString();
 	}
 }
 

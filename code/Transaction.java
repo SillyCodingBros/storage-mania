@@ -15,8 +15,8 @@ public class Transaction
 	 * @generated
 	 * @ordered
 	 */
-	
-	public ArticleStock ListeArticle;
+
+	private ArticleStock[] ListeArticle;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -27,6 +27,10 @@ public class Transaction
 		super();
 	}
 
+	public void addArticle(String name, int price, int quantity){
+		
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
@@ -34,8 +38,15 @@ public class Transaction
 	 * @ordered
 	 */
 
-	public void ToString() {
+	public String ToString() {
 		// TODO implement me
+		String transaction;
+
+		for(int article = 0; i < ListeArticle.length; i++) {
+			transaction += ListeArticle[article].toSTring();
+		}
+
+		return transaction;
 	}
 
 }
