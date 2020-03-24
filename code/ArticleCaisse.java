@@ -19,7 +19,7 @@ public class ArticleCaisse implements Article
 
 	public String toSTring(){
 		String str = new String();
-		str = this.name + " : \n" + Integer.toString(this.quantity) + "\t" + Integer.toString(this.price) + " €\n";
+		str = Article.name + " : \n" + Integer.toString(Article.quantity) + "\t" + Integer.toString(Article.price) + " €\n";
 
 		return str;
 	}
