@@ -1,4 +1,4 @@
-package Gestion de stock - it1 ;
+package GestionDeStock ;
 
 
 /**
@@ -13,16 +13,15 @@ package Gestion de stock - it1 ;
  * @generated
  */
 
-public class Interaction - Etat du Stock
+public class InteractionEtatDuStock
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Interaction - Etat du Stock(){
+	public InteractionEtatDuStock(){
 		super();
 	}
 
 }
-

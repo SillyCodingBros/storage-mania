@@ -1,13 +1,11 @@
-package Donnée ;
-
-
+package Donnee ;
 
 /**
  * <!-- begin-user-doc -->
  * <!--  end-user-doc  -->
  * @generated
  */
-public  interface Article<T>
+public interface Article
 {
     /**
      * <!-- begin-user-doc -->
@@ -25,7 +23,7 @@ public  interface Article<T>
      * @ordered
      */
 
-    public int price = 0;
+    public int Quantité = 0;
 
     /**
      * <!-- begin-user-doc -->
@@ -34,8 +32,7 @@ public  interface Article<T>
      * @ordered
      */
 
-    public int quantity = 0;    
-
+    public int inbound = 0;
 
 }
 
