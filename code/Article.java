@@ -23,7 +23,7 @@ public interface Article
      * @ordered
      */
 
-    public int Quantité = 0;
+    public int quantity = 0;
 
     /**
      * <!-- begin-user-doc -->
