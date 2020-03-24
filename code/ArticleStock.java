@@ -46,5 +46,13 @@ public class ArticleStock implements Article
 		super();
 	}
 
+	public String toSTring(){
+		String str = new String();
+		str = this.name + " : \n" + Integer.toString(this.quantity) + "(" + 
+			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +		
+			Integer.toString(this.price) + " €\n";
+
+		return str;		
+	}
 }
 
