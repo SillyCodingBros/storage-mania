@@ -20,12 +20,15 @@ public class ArticleCaisse implements Article
 
 	public String toSTring(){
 		StringBuilder sb = new StringBuilder("");
-		sb.append(Article.Name);
-		sb.append( " : ");
-		sb.append(Article.Quantity);
-		sb.append(" (");
-		sb.append(Article.inbound);
 
+		sb.append(this.name);
+		sb.append( " : ");
+		sb.append(this.quantity);
+		sb.append("\t");
+		sb.append(this.price);
+		sb.append("€");
+
+		return sb.toString();		
 	}
 }
 
