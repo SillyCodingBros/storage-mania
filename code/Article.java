@@ -7,7 +7,7 @@ package Donnée ;
  * <!--  end-user-doc  -->
  * @generated
  */
-public  interface Article<T> 
+public  interface Article<T>
 {
     /**
      * <!-- begin-user-doc -->
@@ -15,8 +15,8 @@ public  interface Article<T>
      * @generated
      * @ordered
      */
-    
-    public String Nom = "";
+
+    public String name = "";
 
     /**
      * <!-- begin-user-doc -->
@@ -24,8 +24,8 @@ public  interface Article<T>
      * @generated
      * @ordered
      */
-    
-    public int Prix = 0;
+
+    public int price = 0;
 
     /**
      * <!-- begin-user-doc -->
@@ -33,18 +33,9 @@ public  interface Article<T>
      * @generated
      * @ordered
      */
-    
-    public int Quantité = 0;
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  -->
-     * @generated
-     * @ordered
-     */
-    
-    public int inbound = 0;
+    public int quantity = 0;    
 
-	
+
 }
 
