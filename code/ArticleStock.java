@@ -7,7 +7,7 @@
  * @generated
  */
 
-public class ArticleStock implements Article
+public class ArticleStock extends Article
 {
 
 	/**
@@ -48,9 +48,9 @@ public class ArticleStock implements Article
 
 	public String toSTring(){
 		String str = new String();
-		str = Article.name + " : \n" + Integer.toString(Article.quantity) + "(" +
+		str = this.name + " : \n" + Integer.toString(this.quantity) + "(" +
 			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +
-			Integer.toString(Article.price) + " €\n";
+			Integer.toString(this.price) + " €\n";
 
 		return str;
 	}

@@ -5,7 +5,7 @@
  * <!--  end-user-doc  -->
  * @generated
  */
-public interface Article
+public abstract class Article
 {
     /**
      * <!-- begin-user-doc -->

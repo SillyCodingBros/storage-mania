@@ -6,7 +6,7 @@
  * @generated
  */
 
-public class ArticleCaisse implements Article
+public class ArticleCaisse extends Article
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -22,7 +22,7 @@ public class ArticleCaisse implements Article
 
 	public String toSTring(){
 		String str = new String();
-		str = Article.name + " : \n" + Integer.toString(Article.quantity) + "\t" + Integer.toString(Article.price) + " €\n";
+		str = this.name + " : \n" + Integer.toString(this.quantity) + "\t" + Integer.toString(this.price) + " €\n";
 
 		return str;
 	}
