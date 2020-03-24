@@ -1,5 +1,4 @@
-package Gestion de stock - it1 ;
-
+package GestionDeStock ;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,4 +18,3 @@ public class Interaction
 	}
 
 }
-

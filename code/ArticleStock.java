@@ -1,4 +1,4 @@
-package Donnée ;
+package Donnee ;
 
 
 /**
@@ -9,14 +9,6 @@ package Donnée ;
 
 public class ArticleStock implements Article
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-
-	public int CodeBarre;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -25,7 +17,25 @@ public class ArticleStock implements Article
 	 * @ordered
 	 */
 
-	public int Seuil;
+	public int inbound = 0;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+
+	public int barcode;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+
+	public int threshold;
 
 	/**
 	 * <!-- begin-user-doc -->
