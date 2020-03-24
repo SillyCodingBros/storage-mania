@@ -7,7 +7,7 @@ package Donnée ;
  * @generated
  */
 
-public class Article-stock implements Article<T>
+public class ArticleStock implements Article
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -15,24 +15,24 @@ public class Article-stock implements Article<T>
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public int CodeBarre;
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public int Seuil;
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Article-stock(){
+	public ArticleStock(){
 		super();
 	}
 

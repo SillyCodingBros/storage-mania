@@ -7,14 +7,14 @@ package Donnée ;
  * @generated
  */
 
-public class Article-caisse implements Article<T>
+public class ArticleCaisse implements Article
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Article-caisse(){
+	public ArticleCaisse(){
 		super();
 	}
 

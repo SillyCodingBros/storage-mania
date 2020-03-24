@@ -7,7 +7,7 @@ package Gerant ;
  * @generated
  */
 
-public class Console Principale
+public class ConsolePrincipale
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -15,15 +15,15 @@ public class Console Principale
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public Fournisseur ListeFournisseur;
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Console Principale(){
+	public ConsolePrincipale(){
 		super();
 	}
 
@@ -33,54 +33,54 @@ public class Console Principale
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void DemandeListeArticle() {
-		// TODO implement me	
+		// TODO implement me
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void AfficheCommandes() {
-		// TODO implement me	
+		// TODO implement me
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void ImpressionListe() {
-		// TODO implement me	
+		// TODO implement me
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void PasseCommande() {
-		// TODO implement me	
+		// TODO implement me
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void DemandeStock() {
-		// TODO implement me	
+		// TODO implement me
 	}
-	
+
 }
 

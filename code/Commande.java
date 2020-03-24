@@ -15,27 +15,27 @@ public class Commande
 	 * @generated
 	 * @ordered
 	 */
-	
-	public Article-stock Article;
-	
+
+	public ArticleStock Article;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public String Fournisseur;
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public int ID;
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->

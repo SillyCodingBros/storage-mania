@@ -15,9 +15,9 @@ public class Stock
 	 * @generated
 	 * @ordered
 	 */
-	
-	public Article-stock ListeArticle;
-	
+
+	public ArticleStock ListeArticle;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->

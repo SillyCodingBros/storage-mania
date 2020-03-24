@@ -16,8 +16,8 @@ public class Transaction
 	 * @ordered
 	 */
 	
-	public Article-stock ListeArticle;
-	
+	public ArticleStock ListeArticle;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
@@ -33,10 +33,10 @@ public class Transaction
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void ToString() {
-		// TODO implement me	
+		// TODO implement me
 	}
-	
+
 }
 
