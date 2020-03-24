@@ -1,4 +1,4 @@
-package Donnee ;
+//package donnee ;
 
 /**
  * <!-- begin-user-doc -->

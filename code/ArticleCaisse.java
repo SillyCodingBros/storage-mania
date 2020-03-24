@@ -1,4 +1,4 @@
-package Donnee ;
+//package donnee;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +21,7 @@ public class ArticleCaisse implements Article
 		String str = new String();
 		str = this.name + " : \n" + Integer.toString(this.quantity) + "\t" + Integer.toString(this.price) + " €\n";
 
-		return str;		
+		return str;
 	}
 }
 
