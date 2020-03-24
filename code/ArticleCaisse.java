@@ -18,5 +18,14 @@ public class ArticleCaisse implements Article
 		super();
 	}
 
+	public String toSTring(){
+		StringBuilder sb = new StringBuilder("");
+		sb.append(Article.Name);
+		sb.append( " : ");
+		sb.append(Article.Quantity);
+		sb.append(" (");
+		sb.append(Article.inbound);
+
+	}
 }
 
