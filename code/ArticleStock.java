@@ -48,11 +48,11 @@ public class ArticleStock implements Article
 
 	public String toSTring(){
 		String str = new String();
-		str = this.name + " : \n" + Integer.toString(this.quantity) + "(" + 
-			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +		
-			Integer.toString(this.price) + " €\n";
+		str = Article.name + " : \n" + Integer.toString(Article.quantity) + "(" +
+			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +
+			Integer.toString(Article.price) + " €\n";
 
-		return str;		
+		return str;
 	}
 }
 
