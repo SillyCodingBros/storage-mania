@@ -1,4 +1,4 @@
-package Gerant ;
+package company.data;
 
 
 /**
@@ -7,16 +7,8 @@ package Gerant ;
  * @generated
  */
 
-public class Commande
+public class StockProduct extends Product
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-
-	public ArticleStock Article;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -25,7 +17,7 @@ public class Commande
 	 * @ordered
 	 */
 
-	public String Fournisseur;
+	public int inbound;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -34,16 +26,33 @@ public class Commande
 	 * @ordered
 	 */
 
-	public int ID;
+	public int barcode;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+
+	public int threshold;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Commande(){
+	public StockProduct(){
 		super();
 	}
 
+	public String toSTring(){
+		String str = new String();
+		str = this.name + " : \n" + Integer.toString(this.quantity) + "(" +
+			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +
+			Integer.toString(this.price) + " €\n";
+
+		return str;
+	}
 }
 

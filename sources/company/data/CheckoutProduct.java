@@ -1,4 +1,4 @@
-//package donnee;
+package company.data;
 
 /**
  * <!-- begin-user-doc -->
@@ -6,14 +6,14 @@
  * @generated
  */
 
-public class ArticleCaisse extends Article
+public class CheckoutProduct extends Product
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public ArticleCaisse(String name, int price){
+	public CheckoutProduct(String name, int price){
 		super();
 		this.name = name;
 		this.price = price;

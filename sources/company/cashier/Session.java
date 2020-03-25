@@ -1,4 +1,4 @@
-package Donnée ;
+package company.cashier;
 
 
 /**
@@ -7,7 +7,7 @@ package Donnée ;
  * @generated
  */
 
-public class Fournisseur
+public class Session
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -15,43 +15,38 @@ public class Fournisseur
 	 * @generated
 	 * @ordered
 	 */
-	
-	public String Nom;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public String Telephone;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public String Adresse;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public String CodePostal;
-	
+
+	public boolean sessionState;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Fournisseur(){
+	public Session(){
 		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+
+	public void openSession() {
+		// TODO implement me
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+
+	public void closeSession() {
+		// TODO implement me
 	}
 
 }

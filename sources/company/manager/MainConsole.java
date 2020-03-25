@@ -1,4 +1,4 @@
-//package Gerant ;
+package company.manager;
 
 
 /**
@@ -7,23 +7,14 @@
  * @generated
  */
 
-public class ConsolePrincipale
+public class MainConsole
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
-	 * @ordered
 	 */
-
-	public Fournisseur ListeFournisseur;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public ConsolePrincipale(){
+	public MainConsole(){
 		super();
 	}
 
@@ -34,7 +25,7 @@ public class ConsolePrincipale
 	 * @ordered
 	 */
 
-	public void DemandeListeArticle() {
+	public void displayStockProducts() {
 		// TODO implement me
 	}
 
@@ -45,7 +36,7 @@ public class ConsolePrincipale
 	 * @ordered
 	 */
 
-	public void AfficheCommandes() {
+	public void displayPurchaseOrders() {
 		// TODO implement me
 	}
 
@@ -56,7 +47,7 @@ public class ConsolePrincipale
 	 * @ordered
 	 */
 
-	public void ImpressionListe() {
+	public void printDisplayedData() {
 		// TODO implement me
 	}
 
@@ -67,7 +58,7 @@ public class ConsolePrincipale
 	 * @ordered
 	 */
 
-	public void PasseCommande() {
+	public void makePurchaseOrder() {
 		// TODO implement me
 	}
 
@@ -78,7 +69,7 @@ public class ConsolePrincipale
 	 * @ordered
 	 */
 
-	public void DemandeStock() {
+	public void displayBelowThresholdProducts() {
 		// TODO implement me
 	}
 

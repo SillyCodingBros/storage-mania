@@ -1,4 +1,4 @@
-//package Donnee ;
+package company.data;
 
 
 /**
@@ -7,8 +7,16 @@
  * @generated
  */
 
-public class ArticleStock extends Article
+public class Supplier
 {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+
+	public String name;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -17,7 +25,7 @@ public class ArticleStock extends Article
 	 * @ordered
 	 */
 
-	public int inbound = 0;
+	public String phoneNumber;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -26,7 +34,7 @@ public class ArticleStock extends Article
 	 * @ordered
 	 */
 
-	public int barcode;
+	public String address;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,24 +43,16 @@ public class ArticleStock extends Article
 	 * @ordered
 	 */
 
-	public int threshold;
+	public String zipCode;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public ArticleStock(){
+	public Supplier(){
 		super();
 	}
 
-	public String toSTring(){
-		String str = new String();
-		str = this.name + " : \n" + Integer.toString(this.quantity) + "(" +
-			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +
-			Integer.toString(this.price) + " €\n";
-
-		return str;
-	}
 }
 

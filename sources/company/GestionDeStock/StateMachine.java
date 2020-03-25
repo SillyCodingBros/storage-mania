@@ -1,4 +1,5 @@
-package GestionDeStock ;
+package company.GestionDeStock ;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -6,15 +7,16 @@ package GestionDeStock ;
  * @generated
  */
 
-public class Interaction
+public class StateMachine
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Interaction(){
+	public StateMachine(){
 		super();
 	}
 
 }
+

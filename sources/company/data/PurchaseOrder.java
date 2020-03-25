@@ -1,4 +1,4 @@
-package Caissier ;
+package company.data;
 
 
 /**
@@ -7,7 +7,7 @@ package Caissier ;
  * @generated
  */
 
-public class Session
+public class PurchaseOrder
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -15,17 +15,8 @@ public class Session
 	 * @generated
 	 * @ordered
 	 */
-	
-	public boolean SessionState;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Session(){
-		super();
-	}
+
+	public StockProduct product;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -33,21 +24,26 @@ public class Session
 	 * @generated
 	 * @ordered
 	 */
-	
-	public void SessionOuverte() {
-		// TODO implement me	
-	}
-	
+
+	public Supplier supplier;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
-	public void SessionFermer() {
-		// TODO implement me	
+
+	public int id;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 */
+	public PurchaseOrder(){
+		super();
 	}
-	
+
 }
 

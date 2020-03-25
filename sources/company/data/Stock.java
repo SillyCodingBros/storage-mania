@@ -1,4 +1,5 @@
-//package Donnée ;
+package company.data;
+
 import java.util.ArrayList;
 
 /**
@@ -16,7 +17,7 @@ public class Stock
 	 * @ordered
 	 */
 
-	public ArrayList<ArticleStock> stock;
+	public ArrayList<StockProduct> stock;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -24,13 +25,13 @@ public class Stock
 	 * @generated
 	 */
 	public Stock(){
-		stock = new ArrayList<ArticleStock>();
+		stock = new ArrayList<StockProduct>();
 	}
 
-	ArticleStock getArticleFromCodeBar (int codeBar) {
-		for (ArticleStock article : stock) {
-			if (article.barcode == codeBar){
-				return article;
+	public StockProduct getProductFromBarcode(int barcode) {
+		for (StockProduct product : stock) {
+			if (product.barcode == barcode){
+				return product;
 			}
 		}
 		return null;

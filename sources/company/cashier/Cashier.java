@@ -1,5 +1,10 @@
-//package Caissier ;
+package company.cashier;
+
 import java.util.ArrayList;
+
+import company.data.StockProduct;
+import company.data.Stock;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -7,7 +12,7 @@ import java.util.ArrayList;
  * @generated
  */
 
-public class Caisse
+public class Cashier
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -16,18 +21,21 @@ public class Caisse
 	 * @ordered
 	 */
 
-	private boolean tiroirState = false;
-	private Transaction currentTransaction = new Transaction();
-	private ArrayList<Transaction> listeTransaction = new ArrayList<Transaction>();
-	private Stock stock = null;
+	private boolean drawerState;
+	private SalesOrder currentSale;
+	private ArrayList<SalesOrder> salesOrderList;
+	private Stock stock;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Caisse(Stock stock){
+	public Cashier(Stock stock){
 		this.stock = stock;
+		drawerState = false;
+		currentSale = new SalesOrder();
+		salesOrderList = new ArrayList<SalesOrder>();
 	}
 
 	/**
@@ -37,13 +45,13 @@ public class Caisse
 	 * @ordered
 	 */
 
-	public void ScanCodeB(int codeBar) {
-		ArticleStock article = stock.getArticleFromCodeBar(codeBar);
-		if (article == null) {
+	public void scanBarcode(int barcode) {
+		StockProduct product = stock.getProductFromBarcode(barcode);
+		if (product == null) {
 			System.out.println("wrong barcode");
 			return;
 		}
-		currentTransaction.addArticle(article.name,article.price);
+		currentSale.addProduct(product.name, product.price);
 	}
 
 	/**
@@ -53,7 +61,7 @@ public class Caisse
 	 * @ordered
 	 */
 
-	public void TiroirOuvert() {
+	public void openDrawer() {
 		System.out.println("tiroir ouvert");
 	}
 
@@ -64,7 +72,7 @@ public class Caisse
 	 * @ordered
 	 */
 
-	public void TiroirFermer() {
+	public void closedDrawer() {
 		System.out.println("tiroir fermé");
 	}
 
@@ -75,7 +83,7 @@ public class Caisse
 	 * @ordered
 	 */
 
-	public void Retour() {
+	public void productReturn() {
 	}
 
 	/**
@@ -85,10 +93,10 @@ public class Caisse
 	 * @ordered
 	 */
 
-	public void GetSolde() {
+	public void getBalance() {
 		System.out.println("solde");
-		for (Transaction transaction: listeTransaction) {
-			System.out.println(transaction.toString());
+		for (SalesOrder sales: salesOrderList) {
+			System.out.println(sales.toString());
 		}
 	}
 

@@ -1,11 +1,11 @@
-//package donnee ;
+package company.data;
 
 /**
  * <!-- begin-user-doc -->
  * <!--  end-user-doc  -->
  * @generated
  */
-public abstract class Article
+public abstract class Product
 {
     /**
      * <!-- begin-user-doc -->
@@ -14,7 +14,7 @@ public abstract class Article
      * @ordered
      */
 
-    public String name = "";
+    public String name;
 
     /**
      * <!-- begin-user-doc -->
@@ -23,7 +23,7 @@ public abstract class Article
      * @ordered
      */
 
-    public int quantity = 0;
+    public int quantity;
 
     /**
      * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ public abstract class Article
      * @ordered
      */
 
-    public int price = 0;
+    public int price;
 
 }
 
