@@ -65,7 +65,7 @@ public class Caisse
 	 */
 
 	public void TiroirFermer() {
-		System.out.println("tiroir fermer");
+		System.out.println("tiroir fermé");
 	}
 
 	/**
