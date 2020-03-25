@@ -1,5 +1,5 @@
-package Caissier ;
-
+//package Caissier ;
+import java.util.ArrayList;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ public class Transaction
 	 * @ordered
 	 */
 
-	private ArticleStock[] ListeArticle;
+	private ArrayList<ArticleStock> ListeArticle = new ArrayList<ArticleStock>();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ public class Transaction
 	}
 
 	public void addArticle(String name, int price, int quantity){
-		
+		listeTransaction.add(new ArticleCaisse(name,price,quantity));
 	}
 
 	/**
@@ -42,8 +42,8 @@ public class Transaction
 		// TODO implement me
 		String transaction;
 
-		for(int article = 0; i < ListeArticle.length; i++) {
-			transaction += ListeArticle[article].toSTring();
+		for(int article = 0; i < ListeArticle.size(); i++) {
+			transaction += ListeArticle.get(article).toSTring();
 		}
 
 		return transaction;

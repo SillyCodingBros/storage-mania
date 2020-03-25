@@ -1,5 +1,5 @@
-package Caissier ;
-
+//package Caissier ;
+import java.util.ArrayList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,16 +15,18 @@ public class Caisse
 	 * @generated
 	 * @ordered
 	 */
-	
-	private boolean TiroirState;
-	
+
+	private boolean tiroirState = false;
+	private ArrayList<Transaction> listeTransaction = new ArrayList<Transaction>();
+	private Stock stock;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Caisse(){
-		super();
+	public Caisse(Stock stock){
+		this.stock = stock;
 	}
 
 	/**
@@ -33,54 +35,57 @@ public class Caisse
 	 * @generated
 	 * @ordered
 	 */
-	
-	public void ScanCodeB() {
-		// TODO implement me	
+
+	public void ScanCodeB(int codeBar) {
+		ArticleStock = stock.getFromCodeBar(codeBar);
+
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void TiroirOuvert() {
-		// TODO implement me	
+		System.out.println("tiroir ouvert");
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void TiroirFermer() {
-		// TODO implement me	
+		System.out.println("tiroir fermer");
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void Retour() {
-		// TODO implement me	
+		// TODO implement me
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
-	
+
 	public void GetSolde() {
-		// TODO implement me	
+		for (int transaction = 0; transaction < listeTransaction.size(); transaction++) {
+			System.out.println(listeTransaction.get(transaction).toSTring());
+		}
 	}
-	
+
 }
 

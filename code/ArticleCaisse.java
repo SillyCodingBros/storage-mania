@@ -23,7 +23,6 @@ public class ArticleCaisse extends Article
 	public String toSTring(){
 		String str = new String();
 		str = this.name + " : \n" + Integer.toString(this.quantity) + "\t" + Integer.toString(this.price) + " €\n";
-
 		return str;
 	}
 }
