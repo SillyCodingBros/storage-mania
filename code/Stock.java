@@ -27,5 +27,14 @@ public class Stock
 		stock = new ArrayList<ArticleStock>();
 	}
 
+	ArticleStock getArticleFromCodeBar (int codeBar) {
+		for (ArticleStock article : stock) {
+			if (article.barcode == codeBar){
+				return article;
+			}
+		}
+		return null;
+	}
+
 }
 
