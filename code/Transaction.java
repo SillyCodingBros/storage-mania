@@ -16,7 +16,7 @@ public class Transaction
 	 * @ordered
 	 */
 
-	private ArrayList<ArticleStock> ListeArticle = new ArrayList<ArticleStock>();
+	private ArrayList<ArticleCaisse> ListeArticle = new ArrayList<ArticleCaisse>();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -27,8 +27,14 @@ public class Transaction
 		super();
 	}
 
-	public void addArticle(String name, int price, int quantity){
-		listeTransaction.add(new ArticleCaisse(name,price,quantity));
+	public void addArticle(String name, int price){
+		for (ArticleCaisse article : ListeArticle) {
+        if (article.name.equals(name)) {
+						article.quantity++;
+            return;
+        }
+    }
+		ListeArticle.add(new ArticleCaisse(name,price));
 	}
 
 	/**
@@ -39,11 +45,10 @@ public class Transaction
 	 */
 
 	public String ToString() {
-		// TODO implement me
-		String transaction;
+		String transaction = "";
 
-		for(int article = 0; i < ListeArticle.size(); i++) {
-			transaction += ListeArticle.get(article).toSTring();
+		for (ArticleCaisse article: ListeArticle) {
+			transaction += article.toSTring();
 		}
 
 		return transaction;

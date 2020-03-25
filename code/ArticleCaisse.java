@@ -13,11 +13,11 @@ public class ArticleCaisse extends Article
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public ArticleCaisse(String name, int price, int quantity){
+	public ArticleCaisse(String name, int price){
 		super();
 		this.name = name;
 		this.price = price;
-		this.quantity = quantity;
+		this.quantity = 1;
 	}
 
 	public String toSTring(){

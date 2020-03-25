@@ -17,8 +17,9 @@ public class Caisse
 	 */
 
 	private boolean tiroirState = false;
+	private Transaction currentTransaction = new Transaction();
 	private ArrayList<Transaction> listeTransaction = new ArrayList<Transaction>();
-	private Stock stock;
+	private Stock stock = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -37,8 +38,12 @@ public class Caisse
 	 */
 
 	public void ScanCodeB(int codeBar) {
-		ArticleStock = stock.getFromCodeBar(codeBar);
-
+		ArticleStock article = stock.getArticleFromCodeBar(codeBar);
+		if (article == null) {
+			System.out.println("wrong barcode");
+			return;
+		}
+		currentTransaction.addArticle(article.name,article.price);
 	}
 
 	/**
@@ -71,7 +76,6 @@ public class Caisse
 	 */
 
 	public void Retour() {
-		// TODO implement me
 	}
 
 	/**
@@ -82,8 +86,9 @@ public class Caisse
 	 */
 
 	public void GetSolde() {
-		for (int transaction = 0; transaction < listeTransaction.size(); transaction++) {
-			System.out.println(listeTransaction.get(transaction).toSTring());
+		System.out.println("solde");
+		for (Transaction transaction: listeTransaction) {
+			System.out.println(transaction.toSTring());
 		}
 	}
 
