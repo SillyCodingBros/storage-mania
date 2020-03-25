@@ -88,7 +88,7 @@ public class Caisse
 	public void GetSolde() {
 		System.out.println("solde");
 		for (Transaction transaction: listeTransaction) {
-			System.out.println(transaction.toSTring());
+			System.out.println(transaction.toString());
 		}
 	}
 
