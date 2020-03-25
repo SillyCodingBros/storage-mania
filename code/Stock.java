@@ -1,5 +1,5 @@
-package Donnée ;
-
+//package Donnée ;
+import java.util.ArrayList;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ public class Stock
 	 * @ordered
 	 */
 
-	public ArticleStock ListeArticle;
+	public ArrayList<ArticleStock> stock;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -24,7 +24,7 @@ public class Stock
 	 * @generated
 	 */
 	public Stock(){
-		super();
+		stock = new ArrayList<ArticleStock>();
 	}
 
 }
