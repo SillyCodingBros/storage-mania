@@ -5,8 +5,9 @@ package company.data;
  * <!--  end-user-doc  -->
  * @generated
  */
-public abstract class Product
+public abstract class Product implements java.io.Serializable
 {
+    private static final long serialVersionUID = 12l;
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  -->

@@ -23,7 +23,7 @@ public class Suppliers implements java.io.Serializable
 	 */
 
 	private ArrayList<Supplier> suppliers;
-	private static final long serialVersionUID = 42L;
+	private static final long serialVersionUID = 84L;
 
 	/**
 	 * <!-- begin-user-doc -->

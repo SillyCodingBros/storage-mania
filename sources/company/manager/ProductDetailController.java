@@ -1,11 +1,9 @@
 package company.manager;
 
-import company.mvc.Controller;
 import java.util.Scanner;
 import company.data.Stock;
-import company.data.StockProduct;
 
-public class ProductDetailController extends Controller{
+public class ProductDetailController{
 
     private ProductDetailModel model;
     private ProductDetailView view;

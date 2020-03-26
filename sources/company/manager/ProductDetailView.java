@@ -1,6 +1,5 @@
 package company.manager;
 
-import company.mvc.View;
 
 public class ProductDetailView {
     public ProductDetailView(){

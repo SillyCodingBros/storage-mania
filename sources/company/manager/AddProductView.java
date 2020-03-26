@@ -1,10 +1,8 @@
 package company.manager;
 
-import company.mvc.View;
 
-public class AddProductView extends View{
+public class AddProductView{
     public AddProductView(){
-        System.out.println("init - view");
     }
     
     public void promptName(){

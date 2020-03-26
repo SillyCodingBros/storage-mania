@@ -1,7 +1,6 @@
 package company.manager;
 
 import java.util.Scanner;
-import company.mvc.MVC;
 import company.data.Stock;
 import company.serial.DeserializeStock;
 

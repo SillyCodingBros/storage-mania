@@ -13,6 +13,8 @@ public class CheckoutProduct extends Product
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
+	private static final long serialVersionUID = 6l;
+
 	public CheckoutProduct(String name, float price){
 		super();
 		this.name = name;

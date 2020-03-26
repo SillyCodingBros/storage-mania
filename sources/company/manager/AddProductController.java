@@ -16,7 +16,6 @@ public class AddProductController {
         this.model = model;
         this.view = view;
         this.stock =stock;
-        System.out.println("init - controller");
     }
 
     public void addProduct(){

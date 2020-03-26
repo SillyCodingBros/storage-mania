@@ -1,7 +1,5 @@
 package company.manager;
 
-import company.mvc.Model;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import company.data.Stock;
