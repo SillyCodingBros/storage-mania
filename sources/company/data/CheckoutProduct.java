@@ -13,7 +13,7 @@ public class CheckoutProduct extends Product
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public CheckoutProduct(String name, int price){
+	public CheckoutProduct(String name, float price){
 		super();
 		this.name = name;
 		this.price = price;
@@ -22,7 +22,7 @@ public class CheckoutProduct extends Product
 
 	public String toString(){
 		String str = new String();
-		str = this.name + " : \n" + Integer.toString(this.quantity) + "\t" + Integer.toString(this.price) + " €\n";
+		str = this.name + " : \n" + Integer.toString(this.quantity) + "\t" + Float.toString(this.price) + " €\n";
 		return str;
 	}
 }

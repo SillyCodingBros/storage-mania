@@ -50,7 +50,7 @@ public class StockProduct extends Product
 		String str = new String();
 		str = this.name + " : \n" + Integer.toString(this.quantity) + "(" +
 			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +
-			Integer.toString(this.price) + " €\n";
+			Float.toString(this.price) + " €\n";
 
 		return str;
 	}

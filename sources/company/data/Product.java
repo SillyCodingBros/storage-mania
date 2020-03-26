@@ -32,7 +32,7 @@ public abstract class Product
      * @ordered
      */
 
-    public int price;
+    public float price;
 
 }
 

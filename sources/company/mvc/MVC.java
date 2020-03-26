@@ -18,6 +18,7 @@ public class MVC
     this.model.initialize(this);
     this.view.initialize(this);
     this.controller.initialize(this);
+  
   }
 
 }
