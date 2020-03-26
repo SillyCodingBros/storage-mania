@@ -31,7 +31,9 @@ public class Stock implements java.io.Serializable
 	 * @generated
 	 */
 	public Stock(){
-		stock = new ArrayList<StockProduct>();
+		stock = null;
+		deserializeStock();
+		if (stock == null) stock = new ArrayList<StockProduct>();
 	}
 
 	public StockProduct getProductFromBarcode(int barcode) {
