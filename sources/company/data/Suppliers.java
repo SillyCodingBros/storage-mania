@@ -22,7 +22,7 @@ public class Suppliers implements java.io.Serializable
 	 * @ordered
 	 */
 
-	private ArrayList<Supplier> suppliers;	
+	private ArrayList<Supplier> suppliers;
 	private static final long serialVersionUID = 42L;
 
 	/**
@@ -36,8 +36,7 @@ public class Suppliers implements java.io.Serializable
 
 	public void serializeStock(){
 		try {
-			 FileOutputStream fileOut =
-			 new FileOutputStream("/suppliers.ser");
+			 FileOutputStream fileOut = new FileOutputStream("/suppliers.ser");
 			 ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			 out.writeObject(suppliers);
 			 out.close();

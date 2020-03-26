@@ -47,8 +47,7 @@ public class Stock implements java.io.Serializable
 
 	public void serializeStock(){
 		try {
-			 FileOutputStream fileOut =
-			 new FileOutputStream("/stock.ser");
+			 FileOutputStream fileOut = new FileOutputStream("/stock.ser");
 			 ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			 out.writeObject(stock);
 			 out.close();
