@@ -1,6 +1,6 @@
 package company.manager;
 
-import compagny.data.StockProduct;
+import company.data.StockProduct;
 /**
  * <!-- begin-user-doc -->
  * <!--  end-user-doc  -->
