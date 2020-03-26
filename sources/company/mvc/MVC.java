@@ -14,6 +14,10 @@ public class MVC
     this.model = model;
     this.view = view;
     this.controller = controller;
+
+    this.model.initialize(this);
+    this.view.initialize(this);
+    this.controller.initialize(this);
   }
 
 }
