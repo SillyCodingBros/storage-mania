@@ -16,7 +16,7 @@ CASHIERPATH = $(FILESPATH)company/cashier/
 CASHIERFILES = $(CASHIERPATH)SalesOrder.java $(CASHIERPATH)Cashier.java $(CASHIERPATH)Session.java
 
 MANAGERPATH = $(FILESPATH)company/manager/
-MANAGERFILES = $(MANAGERPATH)MainConsole.java $(MANAGERPATH)AddProductController.java $(MANAGERPATH)AddProductModel.java $(MANAGERPATH)AddProductView.java
+MANAGERFILES = $(MANAGERPATH)MainConsole.java $(MANAGERPATH)AddProductController.java $(MANAGERPATH)AddProductModel.java $(MANAGERPATH)AddProductView.java $(MANAGERPATH)ProductDetailView.java $(MANAGERPATH)ProductDetailModel.java $(MANAGERPATH)ProductDetailController.java
 
 MVCPATH = $(FILESPATH)company/mvc/
 MVCFILES = $(MVCPATH)MVC.java $(MVCPATH)Model.java $(MVCPATH)View.java $(MVCPATH)Controller.java
