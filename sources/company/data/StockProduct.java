@@ -50,9 +50,9 @@ public class StockProduct extends Product implements java.io.Serializable
 
 	public String toString(){
 		String str = new String();
-		str = this.name + " : \n" + Integer.toString(this.quantity) + "(" +
-			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +
-			Float.toString(this.price) + " €\n";
+		str = this.name + " : \t" + Integer.toString(this.quantity) + "(" +
+			Integer.toString(this.inbound) + ")" + " / " + Integer.toString(this.threshold) + "\t"+
+			Integer.toString(this.barcode) + "\t   " +	Float.toString(this.price) + " €\n";
 
 		return str;
 	}

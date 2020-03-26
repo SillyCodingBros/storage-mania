@@ -95,6 +95,10 @@ public class MainConsole
 		AddProductView addProductView = new AddProductView();
 		AddProductController addProductController = new AddProductController(addProductModel, addProductView, stock);
 
+		ProductDetailModel productDetailModel = new ProductDetailModel();
+		ProductDetailView productDetailView = new ProductDetailView();
+		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, stock);
+
 		System.out.println(help);
 		while(true){
 			System.out.print(">");
@@ -114,10 +118,9 @@ public class MainConsole
 			else if(input.equalsIgnoreCase("addp")){
 				addProductController.addProduct();
 			}
-			else if(input.equalsIgnoreCase("detail") || input.equalsIgnoreCase("d"))
-				// will ask for barcode input
-				System.out.println("Work in progress - to link to product detail printer");
-
+			else if(input.equalsIgnoreCase("detail") || input.equalsIgnoreCase("d")){
+				productDetailController.productDetail();
+			}
 			else{
 				System.out.println("Unknown command, type 'help' to see supported commands.");
 			}
