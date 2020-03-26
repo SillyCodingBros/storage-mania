@@ -18,10 +18,10 @@ CASHIERFILES = $(CASHIERPATH)SalesOrder.java $(CASHIERPATH)Cashier.java $(CASHIE
 MANAGERPATH = $(FILESPATH)company/manager/
 MANAGERFILES = $(MANAGERPATH)MainConsole.java $(MANAGERPATH)AddProductController.java $(MANAGERPATH)AddProductModel.java $(MANAGERPATH)AddProductView.java
 
-MVCPATH = $(FILESPATH)company/mvc/
-MVCFILES = $(MVCPATH)MVC.java $(MVCPATH)Model.java $(MVCPATH)View.java $(MVCPATH)Controller.java
+SERIALPATH = $(FILESPATH)company/serial/
+SERIALFILES = $(SERIALPATH)SerializeStock.java $(SERIALPATH)DeserializeStock.java
 
-FILES = $(DATAFILES) $(CASHIERFILES) $(MANAGERFILES) $(MVCFILES)
+FILES = $(DATAFILES) $(CASHIERFILES) $(MANAGERFILES) $(SERIALFILES)
 
 all:
 	$(JC) $(JFLAGS) -sourcepath $(FILESPATH) -classpath $(CPATH) -d $(CPATH) $(FILES)

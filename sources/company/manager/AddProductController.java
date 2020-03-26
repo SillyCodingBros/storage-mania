@@ -4,9 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import company.data.Stock;
 import company.data.StockProduct;
-import company.mvc.Controller;
+import company.serial.SerializeStock;
 
-public class AddProductController extends Controller{
+public class AddProductController {
 
     private AddProductModel model;
     private AddProductView view;
@@ -61,5 +61,6 @@ public class AddProductController extends Controller{
         summury += Integer.toString(newProduct.barcode) + ".\n";
         view.printAddedProduct(summury);
         stock.addProduct(newProduct);
+        SerializeStock.main(stock);
     }
 }

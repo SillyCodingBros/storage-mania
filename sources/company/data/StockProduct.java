@@ -7,8 +7,10 @@ package company.data;
  * @generated
  */
 
-public class StockProduct extends Product
+public class StockProduct extends Product implements java.io.Serializable
 {
+
+	private static final long serialVersionUID = 21L;
 
 	/**
 	 * <!-- begin-user-doc -->

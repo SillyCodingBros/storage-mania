@@ -3,6 +3,7 @@ package company.manager;
 import java.util.Scanner;
 import company.mvc.MVC;
 import company.data.Stock;
+import company.serial.DeserializeStock;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,6 +79,8 @@ public class MainConsole
 
 	public static void main(String[] args) {
 		Stock stock = new Stock();
+		DeserializeStock.main(stock);
+		//if (stock == null) stock = new Stock();
 		Scanner reader = new Scanner(System.in);
 		reader.useDelimiter(" ");
 		String input;
