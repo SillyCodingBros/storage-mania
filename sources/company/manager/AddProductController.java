@@ -22,39 +22,44 @@ public class AddProductController extends Controller{
     public void addProduct(){
         Scanner scan = new Scanner(System.in);
         StockProduct newProduct = new StockProduct();
-        String input;
+        String summury = "Adding product '";
 
-        System.out.print("Input new product name :\n> ");
+        view.promptName();
         newProduct.name = scan.nextLine();
+        summury += newProduct.name + "'. Qty : ";
         try{
-            System.out.print("Input new product quantity :\n> ");
+            view.promptQuantity();
             newProduct.quantity = scan.nextInt();
         }catch(InputMismatchException err){
-            System.out.println("Error - Wrong input detected, please try again.");
+            view.printException();
             return;
         }
+        summury += Integer.toString(newProduct.quantity) + ". Threshold : ";
         try{
-            System.out.print("Input new product threshold :\n> ");
+            view.promptThreshold();
             newProduct.threshold = scan.nextInt();
         }catch(InputMismatchException err){
-            System.out.println("Error - Wrong input detected, please try again.");
+            view.printException();
             return;
         }
+        summury += Integer.toString(newProduct.threshold) + ". Price : ";
         try{
-            System.out.print("Input new product price :\n> ");
+            view.promptPrice();
             newProduct.price = scan.nextFloat();
         }catch(InputMismatchException err){
-            System.out.println("Error - Wrong input detected, please try again.");
+            view.printException();
             return;
         }
+        summury += Float.toString(newProduct.price) + "€. Ref : ";
         try{
-            System.out.print("Input new product barcode :\n> ");
+            view.promptBarCode();
             newProduct.barcode = scan.nextInt();
         }catch(InputMismatchException err){
-            System.out.println("Error - Wrong input detected, please try again.");
+            view.printException();
             return;
         }
-
+        summury += Integer.toString(newProduct.barcode) + ".\n";
+        view.printAddedProduct(summury);
         stock.addProduct(newProduct);
     }
 }

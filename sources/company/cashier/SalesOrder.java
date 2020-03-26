@@ -32,7 +32,7 @@ public class SalesOrder
 		salesOrder = new ArrayList<CheckoutProduct>();
 	}
 
-	public void addProduct(String name, int price){
+	public void addProduct(String name, float price){
 		for (CheckoutProduct orderedProduct : salesOrder) {
         if (orderedProduct.name.equals(name)) {
 						orderedProduct.quantity++;

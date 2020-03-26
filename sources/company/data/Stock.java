@@ -47,6 +47,7 @@ public class Stock implements java.io.Serializable
 
 	public void addProduct(StockProduct product){
 		stock.add(product);
+		serializeStock();
 	}
 
 	public void serializeStock(){

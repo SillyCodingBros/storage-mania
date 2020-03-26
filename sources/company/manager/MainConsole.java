@@ -109,11 +109,7 @@ public class MainConsole
 				System.out.println("Work in progress - to link to out of stock printers");
 
 			else if(input.equalsIgnoreCase("addp")){
-				// will ask for each individual required product fields
-				System.out.println("Work in progress - to link to new product mvc");
 				addProductController.addProduct();
-				//addProductMVC.view.test();
-				//addProductMVC.controller.test();
 			}
 			else if(input.equalsIgnoreCase("detail") || input.equalsIgnoreCase("d"))
 				// will ask for barcode input
