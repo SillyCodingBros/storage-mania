@@ -20,7 +20,7 @@ public class CheckoutProduct extends Product
 		this.quantity = 1;
 	}
 
-	public String toSTring(){
+	public String toString(){
 		String str = new String();
 		str = this.name + " : \n" + Integer.toString(this.quantity) + "\t" + Integer.toString(this.price) + " €\n";
 		return str;
