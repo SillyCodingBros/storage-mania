@@ -46,7 +46,7 @@ public class StockProduct extends Product
 		super();
 	}
 
-	public String toSTring(){
+	public String toString(){
 		String str = new String();
 		str = this.name + " : \n" + Integer.toString(this.quantity) + "(" +
 			Integer.toString(this.inbound) + ")   " + Integer.toString(this.barcode) +
