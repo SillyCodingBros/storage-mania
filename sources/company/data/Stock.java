@@ -45,6 +45,10 @@ public class Stock implements java.io.Serializable
 		return null;
 	}
 
+	public void addProduct(StockProduct product){
+		stock.add(product);
+	}
+
 	public void serializeStock(){
 		try {
 			 FileOutputStream fileOut = new FileOutputStream("/stock.ser");
