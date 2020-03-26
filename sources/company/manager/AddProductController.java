@@ -15,7 +15,7 @@ public class AddProductController {
     public AddProductController(AddProductModel model, AddProductView view, Stock stock){
         this.model = model;
         this.view = view;
-        this.stock =stock;
+        this.stock = stock;
     }
 
     public void addProduct(){
