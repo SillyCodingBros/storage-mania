@@ -1,6 +1,6 @@
 package company.manager;
 
-
+import compagny.data.StockProduct;
 /**
  * <!-- begin-user-doc -->
  * <!--  end-user-doc  -->
@@ -16,6 +16,7 @@ public class MainConsole
 	 */
 	public MainConsole(){
 		super();
+		Boolean done = true;
 	}
 
 	/**
@@ -73,5 +74,12 @@ public class MainConsole
 		// TODO implement me
 	}
 
+	/*public static void main(String[] args) {
+		while(!done){
+			StockProduct.toString();
+		}
+		//printOrders();
+		//printHelp();
+	}*/
 }
 
