@@ -1,7 +1,5 @@
 package company.manager;
 
-import company.data.Stock;
-
 public class StockController {
     private StockModel model;
     private StockView view;
@@ -12,6 +10,7 @@ public class StockController {
     }
 
     public void getStockSummury(){
+        view.printHeader();
         view.printStock(model.getStockStr());
     }
 }
