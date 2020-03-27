@@ -93,7 +93,7 @@
 			\noindent
 			\begin{minipage}{0.4\textwidth}
 				\begin{flushleft} \large
-					\emph{Auteur :}\\
+					\emph{Auteurs :}\\
 					\textsc{COTREZ Leo}\\
 					\textsc{LEGOUEIX Nicolas}\\
 					 \textsc{QUERIC Yann}\\
@@ -104,7 +104,7 @@
 			\begin{minipage}{0.4\textwidth}
 				\begin{flushright} \large
 					\emph{Enseignant :} \\
-					M \textsc{P.Lefebvre}\\
+					M \textsc{ P. Lefebvre}\\
 				\end{flushright}
 			\end{minipage}
 
@@ -117,7 +117,7 @@
 	\end{titlepage}
 	\tableofcontents
 	\newpage
-	\section{Préliminaire}
+	\section{Préliminaires}
 	    \subsection{Paquetage}
 	    	\includegraphics[width=0.9\textwidth]{img/classDiagram.png}
 	    \newpage
@@ -138,10 +138,12 @@
 	            \begin{itemize}
     	            \item pavé numerique: saisir le code produit
                     \item 1 bouton total: 2 fonctionnalités
-    		        \item 1 appuie ouvre la caisse et imprime un ticket de transaction
-    		    	\item 2 appuies ouvre la caisse et imprime le ticket de l'ensemble des transactions depuis le dernier solde ainsi que le total
-                    \item 1 appuie entrée: valide la saisi du code produit
-                    \item 1 appuie retour: initie la procédure de retour en attente du code produit puis ouvre de la caisse pour le remboursement puis à la fermeture du tiroir et incrémentation de la quantité en stock
+								\begin{itemize}
+    		        \item 1 appui ouvre la caisse et imprime un ticket de transaction
+    		    		\item 2 appuis ouvre la caisse et imprime le ticket de l'ensemble des transactions depuis le dernier solde ainsi que le total
+								\end{itemize}
+                    \item 1 bouton entrée: valide la saisie du code produit
+                    \item 1 bouton retour: initie la procédure de retour en attente du code produit puis ouvre de la caisse pour le remboursement puis à la fermeture du tiroir, incrémente la quantité en stock
                     \item 1 lecteur laser: scan le code barre de l'acticle
                     \item Des boutons + et - dans la colonne quantité pour augmenter ou diminuer la quantité d'un produit
     	        \end{itemize}
@@ -161,7 +163,7 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
                     \item 1 bouton impression des produits en stock (demande de confirmation)
@@ -185,7 +187,7 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
                     \item 1 bouton impression des détails d'un produit (demande de confirmation)
@@ -209,10 +211,10 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
-                    \item 1 bouton de valider l'ajout de produit
+                    \item 1 bouton valider ajout de produit
     	        \end{itemize}
 	    \end{itemize}
 	    \includegraphics[width=0.9\textwidth]{img/page4}
@@ -231,7 +233,7 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
                     \item 1 barre de texte pour taper la recherche
@@ -240,7 +242,7 @@
     	        \end{itemize}
 	    \end{itemize}
 	    \includegraphics[width=0.9\textwidth]{img/page7.jpg}
-	    \subsubsection{Affichage des détails fournisseur }
+	    \subsubsection{Affichage les détails fournisseur }
 	    \begin{itemize}
 	        \item Modèle
     	        \begin{itemize}
@@ -254,7 +256,7 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
                     \item 1 bouton impression des détails fournisseur(demande de confirmation)
@@ -276,10 +278,9 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
-                    \item 1 bouton de valider l'ajout de fournisseur (passage au MVC détail de fournisseur)
     	        \end{itemize}
 	    \end{itemize}
 	    \includegraphics[width=0.9\textwidth]{img/page6.png}
@@ -297,12 +298,12 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
                     \item 1 bouton impression des produits sous leurs seuil (demande de confirmation)
                     \item cliquer sur un produit pour voir les détails (passage au MVC détail de produit)
-                    \item 1 bouton pour accéder au commande en cours (passage au MVC liste commande en cours)
+                    \item 1 bouton pour accéder aux commandes en cours (passage au MVC liste commande en cours)
     	        \end{itemize}
 	    \end{itemize}
 	    \includegraphics[width=0.9\textwidth]{img/page9.png}
@@ -320,10 +321,10 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
-                    \item 1 bouton impression des produits de liste des commande (demande de confirmation)
+                    \item 1 bouton impression des produits de liste des commandes (demande de confirmation)
     	        \end{itemize}
 	    \end{itemize}
 	    \includegraphics[width=0.9\textwidth]{img/page10.png}
@@ -341,7 +342,7 @@
 	        \item Controlleur
 	            \begin{itemize}
                     \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
-                    \item 1 bouton pour accéder à la liste stock (passage au MVC liste stock)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
                     \item 1 bouton ajouter article (passage au MVC ajouter un article)
                     \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
                     \item 1 bouton de validation de la commande (demande de confirmation)
