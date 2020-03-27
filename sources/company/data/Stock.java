@@ -68,7 +68,7 @@ public class Stock implements java.io.Serializable
 
 	public String toString(){
 		if (stock.isEmpty()) return "Stock is Empty\n";
-		StringBuilder sb = new StringBuilder("");
+		StringBuilder sb = new StringBuilder("Name   Qty Owned(inb.)/lim.\tBarcode\t\tPrice\n");
 		for (StockProduct product : stock) {
 			sb.append(product.toString());
 		}
@@ -81,8 +81,8 @@ public class Stock implements java.io.Serializable
 		for (StockProduct product : stock) {
 			if (product.quantity <= product.threshold) sb.append(product.toString());
 		}
-		if (sb.toString().equals("")) return "No Products Bellow Threshold";
-		return sb.toString();
+		if (sb.toString().equals("")) return "No Products Bellow Threshold\n";
+		return "Name   Qty Owned(inb.)/lim.\tBarcode\t\tPrice\n" + sb.toString();
 	}
 }
 

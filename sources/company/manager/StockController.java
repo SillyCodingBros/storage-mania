@@ -10,7 +10,6 @@ public class StockController {
     }
 
     public void getStockSummury(){
-        view.printHeader();
         view.printStock(model.getStockStr());
     }
 }

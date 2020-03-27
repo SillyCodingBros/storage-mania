@@ -7,14 +7,11 @@ public class ThresholdModel{
 
     public ThresholdModel(Stock stock){
         this.stock = stock;
-        
+
     }
 
-    public String getStockStr(){
-        String ret;
-        ret = stock.belowThresholdToString();
-        return ret;
+    public String getThresholdStr(){
+        return stock.belowThresholdToString();
     }
- 
 
 }

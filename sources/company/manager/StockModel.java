@@ -11,8 +11,6 @@ public class StockModel {
     }
 
     public String getStockStr(){
-        String ret;
-        ret = stock.toString();
-        return ret;
+        return stock.toString();
     }
 }
