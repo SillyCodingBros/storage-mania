@@ -106,9 +106,9 @@ public class MainConsole
 		StockView stockView = new StockView();
 		StockController stockController = new StockController(stockModel, stockView);
 
-		ThresholdModel thresholdModel = new ThresholdModel();
+		ThresholdModel thresholdModel = new ThresholdModel(stock);
 		ThresholdView thresholdView = new ThresholdView();
-		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView, stock);
+		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView);
 
 		System.out.println(help);
 		while(true){

@@ -1,18 +1,18 @@
 package company.manager;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import company.data.Stock;
-import company.data.StockProduct;
 
 public class ThresholdModel{
-    public ThresholdModel(){
+    private Stock stock;
+
+    public ThresholdModel(Stock stock){
+        this.stock = stock;
         
     }
 
-    public String getStockStr(Stock stock){
+    public String getStockStr(){
         String ret;
-        ret = stock.toString();
+        ret = stock.belowThresholdToString();
         return ret;
     }
  
