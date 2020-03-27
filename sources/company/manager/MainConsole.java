@@ -85,22 +85,26 @@ public class MainConsole
 		String input;
 		String help = "Avalable commands are : \n\t [e]xit : stops the machine, \n\t [h]elp : displays this message, \n\t"+
 						" [s]tock : displays stock state,\n\t [t]hreshold : displays products that may go out of stock soon, \n\t" +
-						" addp : add a new product entry, \n\t [d]etail : prints full details about a product" ;
+						" addp : add a new product entry, \n\t delp : delete a product entry, \n\t [d]etail : prints full details about a product" ;
 
 		//MVC stockMVC = new MVC("stockMVC"/*, this, new StockModel(), new StockView(), new StockController()*/);
 		//MVC productMVC = new MVC("productMVC"/*, this, new ProductModel(), new ProductView(), new ProductController()*/);
 		//MVC stockProductMVC = new MVC("stockProductMVC"/*, this, new stockProductModel(), new stockProductView(), new stockProductController()*/);
-		AddProductModel addProductModel = new AddProductModel();
+		AddProductModel addProductModel = new AddProductModel(stock);
 		AddProductView addProductView = new AddProductView();
 		AddProductController addProductController = new AddProductController(addProductModel, addProductView, stock);
 
-		ProductDetailModel productDetailModel = new ProductDetailModel();
+		RemoveProductModel removeProductModel = new RemoveProductModel(stock);
+		RemoveProductView removeProductView = new RemoveProductView();
+		RemoveProductController removeProductController = new RemoveProductController(removeProductModel, removeProductView);
+
+		ProductDetailModel productDetailModel = new ProductDetailModel(stock);
 		ProductDetailView productDetailView = new ProductDetailView();
 		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, stock);
 
-		StockModel stockModel = new StockModel();
+		StockModel stockModel = new StockModel(stock);
 		StockView stockView = new StockView();
-		StockController stockController = new StockController(stockModel, stockView, stock);
+		StockController stockController = new StockController(stockModel, stockView);
 
 		ThresholdModel thresholdModel = new ThresholdModel();
 		ThresholdView thresholdView = new ThresholdView();
@@ -124,6 +128,9 @@ public class MainConsole
 
 			else if(input.equalsIgnoreCase("addp")){
 				addProductController.addProduct();
+			}
+			else if(input.equalsIgnoreCase("delp")){
+				removeProductController.removeProduct();
 			}
 			else if(input.equalsIgnoreCase("detail") || input.equalsIgnoreCase("d")){
 				productDetailController.productDetail();
