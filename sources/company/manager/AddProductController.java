@@ -25,6 +25,10 @@ public class AddProductController {
 
         view.promptName();
         newProduct.name = scan.nextLine();
+        if(newProduct.name.isEmpty() || newProduct.name.equals(" ")){
+            view.printEmptyStr();
+            return;
+        }
         summury += newProduct.name + "'. Qty : ";
         try{
             view.promptQuantity();
@@ -58,8 +62,12 @@ public class AddProductController {
             return;
         }
         summury += Integer.toString(newProduct.barcode) + ".\n";
-        view.printAddedProduct(summury);
-        stock.addProduct(newProduct);
-        SerializeStock.main(stock);
+        if(stock.addProduct(newProduct)){
+            view.printAddedProduct(summury);
+            SerializeStock.main(stock);
+        } else {
+            view.printCantAdd();
+        }       
+
     }
 }

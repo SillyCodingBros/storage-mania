@@ -26,4 +26,10 @@ public class AddProductView{
     public void printAddedProduct(String str){
         System.out.println(str);
     }
+    public void printCantAdd(){
+        System.out.println("Error - This barcode is allready in use.");
+    }
+    public void printEmptyStr(){
+        System.out.println("Error - Entered string is empty or not significent.");
+    }
 }
