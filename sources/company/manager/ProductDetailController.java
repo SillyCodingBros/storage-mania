@@ -26,7 +26,7 @@ public class ProductDetailController{
             return;
         } else{
             String str;
-            str = model.findProduct(barcode, stock);
+            str = model.findProduct(barcode);
             if(str == null){
                 view.printNotFound(barcode);
             } else{
