@@ -59,6 +59,7 @@ public class Stock implements java.io.Serializable
 	public boolean removeProduct(int barcode){
 		for (StockProduct product : stock) {
 			if (product.barcode == barcode){
+				barcodeSet.remove(barcode);
 				return stock.remove(product);
 			}
 		}
