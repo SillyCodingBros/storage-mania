@@ -72,7 +72,7 @@ public class MainConsole
 	 * @ordered
 	 */
 
-	public void displayBelowThresholdProducts() {
+	public void displayBelowThresholds() {
 		// TODO implement me
 	}
 
@@ -106,6 +106,10 @@ public class MainConsole
 		StockView stockView = new StockView();
 		StockController stockController = new StockController(stockModel, stockView);
 
+		ThresholdModel thresholdModel = new ThresholdModel(stock);
+		ThresholdView thresholdView = new ThresholdView();
+		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView);
+
 		System.out.println(help);
 		while(true){
 			System.out.print(">");
@@ -120,7 +124,7 @@ public class MainConsole
 				stockController.getStockSummury();
 			}
 			else if(input.equalsIgnoreCase("threshold") || input.equalsIgnoreCase("t"))
-				System.out.println("Work in progress - to link to out of stock printers");
+				thresholdController.threshold();
 
 			else if(input.equalsIgnoreCase("addp")){
 				addProductController.addProduct();
