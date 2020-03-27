@@ -98,7 +98,7 @@ public class MainConsole
 		RemoveProductView removeProductView = new RemoveProductView();
 		RemoveProductController removeProductController = new RemoveProductController(removeProductModel, removeProductView);
 
-		ProductDetailModel productDetailModel = new ProductDetailModel();
+		ProductDetailModel productDetailModel = new ProductDetailModel(stock);
 		ProductDetailView productDetailView = new ProductDetailView();
 		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, stock);
 

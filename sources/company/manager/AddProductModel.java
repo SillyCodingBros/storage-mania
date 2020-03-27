@@ -12,10 +12,6 @@ public class AddProductModel{
         this.stock = stock;
     }
 
-    public void test(){
-        System.out.println("brah - model");
-    }
-
     public Integer getInputInt(Scanner scan){
         Integer data;
 

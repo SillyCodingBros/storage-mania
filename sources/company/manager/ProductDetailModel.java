@@ -6,8 +6,11 @@ import company.data.Stock;
 import company.data.StockProduct;
 
 public class ProductDetailModel {
-    public ProductDetailModel(){
 
+    private Stock stock;
+
+    public ProductDetailModel(Stock stock){
+        this.stock = stock;
     }
 
     public Integer getInputData(Scanner scan){
@@ -21,7 +24,7 @@ public class ProductDetailModel {
         }
     }
 
-    public String findProduct(Integer barcode, Stock stock){
+    public String findProduct(Integer barcode){
         String ret;
         StockProduct toFindProduct;
         toFindProduct = stock.getProductFromBarcode(barcode);
