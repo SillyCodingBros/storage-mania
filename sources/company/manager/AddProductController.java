@@ -25,7 +25,7 @@ public class AddProductController {
 
         view.promptName();
         newProduct.name = scan.nextLine();
-        if(newProduct.name.isEmpty() || newProduct.name.equals(" ")){
+        if(newProduct.name.isEmpty() || newProduct.name.startsWith(" ")){
             view.printEmptyStr();
             return;
         }
@@ -67,7 +67,7 @@ public class AddProductController {
             SerializeStock.main(stock);
         } else {
             view.printCantAdd();
-        }       
+        }
 
     }
 }
