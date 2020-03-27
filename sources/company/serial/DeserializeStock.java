@@ -13,6 +13,7 @@ public class DeserializeStock {
          ObjectInputStream in = new ObjectInputStream(fileIn);
          Stock tmp = (Stock) in.readObject();
          stock.stock = tmp.stock;
+         stock.barcodeSet = tmp.barcodeSet;
          in.close();
          fileIn.close();
       } catch (IOException i) {
