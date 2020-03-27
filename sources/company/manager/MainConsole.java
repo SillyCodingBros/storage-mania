@@ -102,9 +102,9 @@ public class MainConsole
 		ProductDetailView productDetailView = new ProductDetailView();
 		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, stock);
 
-		StockModel stockModel = new StockModel();
+		StockModel stockModel = new StockModel(stock);
 		StockView stockView = new StockView();
-		StockController stockController = new StockController(stockModel, stockView, stock);
+		StockController stockController = new StockController(stockModel, stockView);
 
 		System.out.println(help);
 		while(true){
