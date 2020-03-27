@@ -114,7 +114,6 @@ public class MainConsole
 
 			else if(input.equalsIgnoreCase("stock") || input.equalsIgnoreCase("s")){
 				stockController.getStockSummury();
-				System.out.println("Work in progress - to link to stock printer");
 			}
 			else if(input.equalsIgnoreCase("threshold") || input.equalsIgnoreCase("t"))
 				System.out.println("Work in progress - to link to out of stock printers");
