@@ -1,6 +1,7 @@
 package company.manager;
 
 import company.data.Stock;
+import company.serial.SerializeStock;
 
 public class RemoveProductModel{
     Stock stock;
@@ -10,6 +11,10 @@ public class RemoveProductModel{
     }
 
     public boolean removeProduct(int barcode){
-        return stock.removeProduct(barcode);
+        if (stock.removeProduct(barcode)) {
+          SerializeStock.main(stock);
+          return true;
+        }
+        return false;
     }
 }
