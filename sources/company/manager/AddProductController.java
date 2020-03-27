@@ -30,44 +30,52 @@ public class AddProductController {
             return;
         }
         summury += newProduct.name + "'. Qty : ";
-        try{
-            view.promptQuantity();
-            newProduct.quantity = scan.nextInt();
-        }catch(InputMismatchException err){
+
+        view.promptQuantity();
+        newProduct.quantity = model.getInputInt(scan);
+        if(newProduct.quantity == -1){
             view.printException();
             return;
+        } else{
+            summury += Integer.toString(newProduct.quantity) + ". Threshold : ";
         }
-        summury += Integer.toString(newProduct.quantity) + ". Threshold : ";
-        try{
-            view.promptThreshold();
-            newProduct.threshold = scan.nextInt();
-        }catch(InputMismatchException err){
+
+        view.promptThreshold();
+        newProduct.threshold = model.getInputInt(scan);
+        if(newProduct.threshold == -1){
             view.printException();
             return;
+        }else{
+            summury += Integer.toString(newProduct.threshold) + ". Price : ";
         }
-        summury += Integer.toString(newProduct.threshold) + ". Price : ";
-        try{
-            view.promptPrice();
-            newProduct.price = scan.nextFloat();
-        }catch(InputMismatchException err){
+
+        view.promptPrice();
+        newProduct.price = model.getInputFloat(scan);
+        if(newProduct.price == (float)-1.0){
             view.printException();
             return;
+        }else{
+            summury += Float.toString(newProduct.price) + "€. Ref : ";
         }
-        summury += Float.toString(newProduct.price) + "€. Ref : ";
-        try{
-            view.promptBarCode();
-            newProduct.barcode = scan.nextInt();
-        }catch(InputMismatchException err){
+        
+        view.promptBarCode();
+        newProduct.barcode = model.getInputInt(scan);
+        if(newProduct.barcode == -1){
             view.printException();
             return;
+        }else{
+            summury += Integer.toString(newProduct.barcode) + ".\n";
         }
-        summury += Integer.toString(newProduct.barcode) + ".\n";
-        if(stock.addProduct(newProduct)){
-            view.printAddedProduct(summury);
-            SerializeStock.main(stock);
-        } else {
+
+
+
+        if(model.addProduct(newProduct) == false){
             view.printCantAdd();
+        } else{
+            view.printAddedProduct(summury);
         }
+
+
 
     }
 }

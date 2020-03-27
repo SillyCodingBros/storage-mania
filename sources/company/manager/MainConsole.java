@@ -90,7 +90,7 @@ public class MainConsole
 		//MVC stockMVC = new MVC("stockMVC"/*, this, new StockModel(), new StockView(), new StockController()*/);
 		//MVC productMVC = new MVC("productMVC"/*, this, new ProductModel(), new ProductView(), new ProductController()*/);
 		//MVC stockProductMVC = new MVC("stockProductMVC"/*, this, new stockProductModel(), new stockProductView(), new stockProductController()*/);
-		AddProductModel addProductModel = new AddProductModel();
+		AddProductModel addProductModel = new AddProductModel(stock);
 		AddProductView addProductView = new AddProductView();
 		AddProductController addProductController = new AddProductController(addProductModel, addProductView, stock);
 
