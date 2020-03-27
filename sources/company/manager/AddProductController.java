@@ -10,12 +10,10 @@ public class AddProductController {
 
     private AddProductModel model;
     private AddProductView view;
-    private Stock stock;
 
-    public AddProductController(AddProductModel model, AddProductView view, Stock stock){
+    public AddProductController(AddProductModel model, AddProductView view){
         this.model = model;
         this.view = view;
-        this.stock = stock;
     }
 
     public void addProduct(){
