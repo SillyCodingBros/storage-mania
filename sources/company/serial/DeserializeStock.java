@@ -3,6 +3,7 @@ package company.serial;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 import company.data.Stock;
 
 public class DeserializeStock {
@@ -17,11 +18,12 @@ public class DeserializeStock {
          in.close();
          fileIn.close();
       } catch (IOException i) {
-         i.printStackTrace();
+         //i.printStackTrace();
+         System.out.println("No previous '../sources/saves/stock.ser' found");
          return;
       } catch (ClassNotFoundException c) {
          System.out.println("No previous '../sources/saves/stock.ser' found");
-         c.printStackTrace();
+         //c.printStackTrace();
          return;
       }
   }
