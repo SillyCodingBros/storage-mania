@@ -98,6 +98,10 @@ public class MainConsole
 		ProductDetailView productDetailView = new ProductDetailView();
 		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, stock);
 
+		StockModel stockModel = new StockModel();
+		StockView stockView = new StockView();
+		StockController stockController = new StockController(stockModel, stockView, stock);
+
 		System.out.println(help);
 		while(true){
 			System.out.print(">");
@@ -108,9 +112,10 @@ public class MainConsole
 			else if(input.equalsIgnoreCase("help") || input.equalsIgnoreCase("h"))
 				System.out.println(help);
 
-			else if(input.equalsIgnoreCase("stock") || input.equalsIgnoreCase("s"))
+			else if(input.equalsIgnoreCase("stock") || input.equalsIgnoreCase("s")){
+				stockController.getStockSummury();
 				System.out.println("Work in progress - to link to stock printer");
-
+			}
 			else if(input.equalsIgnoreCase("threshold") || input.equalsIgnoreCase("t"))
 				System.out.println("Work in progress - to link to out of stock printers");
 
