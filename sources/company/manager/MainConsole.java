@@ -92,7 +92,7 @@ public class MainConsole
 		//MVC stockProductMVC = new MVC("stockProductMVC"/*, this, new stockProductModel(), new stockProductView(), new stockProductController()*/);
 		AddProductModel addProductModel = new AddProductModel(stock);
 		AddProductView addProductView = new AddProductView();
-		AddProductController addProductController = new AddProductController(addProductModel, addProductView, stock);
+		AddProductController addProductController = new AddProductController(addProductModel, addProductView);
 
 		RemoveProductModel removeProductModel = new RemoveProductModel(stock);
 		RemoveProductView removeProductView = new RemoveProductView();
@@ -100,7 +100,7 @@ public class MainConsole
 
 		ProductDetailModel productDetailModel = new ProductDetailModel(stock);
 		ProductDetailView productDetailView = new ProductDetailView();
-		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, stock);
+		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView);
 
 		StockModel stockModel = new StockModel(stock);
 		StockView stockView = new StockView();

@@ -1,18 +1,15 @@
 package company.manager;
 
 import java.util.Scanner;
-import company.data.Stock;
 
 public class ProductDetailController{
 
     private ProductDetailModel model;
     private ProductDetailView view;
-    private Stock stock;
 
-    public ProductDetailController(ProductDetailModel model, ProductDetailView view, Stock stock){
+    public ProductDetailController(ProductDetailModel model, ProductDetailView view){
         this.model = model;
         this.view = view;
-        this.stock = stock;
     }   
 
     public void productDetail(){
