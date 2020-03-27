@@ -2,6 +2,7 @@ package company.data;
 
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.HashSet;
 import java.lang.StringBuilder;
 /*
 import java.io.FileOutputStream;
@@ -36,8 +37,8 @@ public class Stock implements java.io.Serializable
 	 * @generated
 	 */
 	public Stock(){
-		stock = null;
-		if (stock == null) stock = new ArrayList<StockProduct>();
+		stock = new ArrayList<StockProduct>();
+		barcodeSet = new HashSet<>();
 	}
 
 	public StockProduct getProductFromBarcode(int barcode) {
