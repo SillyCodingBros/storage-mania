@@ -8,7 +8,7 @@ public class StockController {
         this.model = model;
         this.view = view;
     }
-
+    
     /*public void getStockSummury(){
         view.printStock(model.getStockStr());
     }*/
