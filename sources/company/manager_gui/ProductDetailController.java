@@ -1,15 +1,19 @@
 package company.manager;
 
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class ProductDetailController{
 
     private ProductDetailModel model;
     private ProductDetailView view;
+    private HashMap<String, Object> context;
 
-    public ProductDetailController(ProductDetailModel model, ProductDetailView view){
+    public ProductDetailController(ProductDetailModel model, ProductDetailView view, HashMap<String, Object> context){
         this.model = model;
         this.view = view;
+        this.context = context;
+
     }   
 
     public void productDetail(){

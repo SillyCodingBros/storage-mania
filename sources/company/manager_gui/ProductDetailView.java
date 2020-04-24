@@ -6,7 +6,8 @@ import javax.swing.border.*;
 import javax.swing.table.*;
 
 public class ProductDetailView {
-    private JFrame window;
+    private ProductDetailController controller;
+    public JFrame window;
     private Font myFont;
     private Font Fonttable;
 	private Font FontTitle;
@@ -157,6 +158,10 @@ public class ProductDetailView {
 		window.setLocationRelativeTo(null);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(false);
+    }
+
+    public void setController(ProductDetailController controller){
+        this.controller = controller;
     }
     /*public void promptBarCode(){
         System.out.print("Input product barcode :\n\t> ");

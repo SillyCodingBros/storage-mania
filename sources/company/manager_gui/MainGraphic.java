@@ -2,8 +2,7 @@ package company.manager;
 
 import java.awt.*;
 import java.applet.Applet;
-
-
+import java.util.HashMap;
 import java.util.Scanner;
 import company.data.Stock;
 import company.serial.DeserializeStock;
@@ -83,6 +82,7 @@ public class MainGraphic
 	public static void main(String[] args) {
 		Stock stock = new Stock();
 		DeserializeStock.main(stock);
+		HashMap <String, Object> context = new HashMap<String, Object>();
 		//if (stock == null) stock = new Stock();
 		/*Scanner reader = new Scanner(System.in);
 		reader.useDelimiter(" ");
@@ -97,24 +97,34 @@ public class MainGraphic
 		
 		AddProductModel addProductModel = new AddProductModel(stock);
 		AddProductView addProductView = new AddProductView();
-		AddProductController addProductController = new AddProductController(addProductModel, addProductView);
+		context.put("addProduct", addProductView);
 		
 		RemoveProductModel removeProductModel = new RemoveProductModel(stock);
 		RemoveProductView removeProductView = new RemoveProductView();
-		RemoveProductController removeProductController = new RemoveProductController(removeProductModel, removeProductView);
+		context.put("removeProduct", removeProductView);
 
 		ProductDetailModel productDetailModel = new ProductDetailModel(stock);
 		ProductDetailView productDetailView = new ProductDetailView();
-		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView);
+		context.put("productDetail", productDetailView);
 		
 		StockModel stockModel = new StockModel(stock);
 		StockView stockView = new StockView();
-		StockController stockController = new StockController(stockModel, stockView);
+		context.put("stock", stockView);
 		
 		ThresholdModel thresholdModel = new ThresholdModel(stock);
 		ThresholdView thresholdView = new ThresholdView();
-		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView);
+		context.put("threshold", thresholdView);
 		
+		AddProductController addProductController = new AddProductController(addProductModel, addProductView, context);
+		addProductView.setController(addProductController);
+		RemoveProductController removeProductController = new RemoveProductController(removeProductModel, removeProductView, context);
+		removeProductView.setController(removeProductController);
+		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, context);
+		productDetailView.setController(productDetailController);
+		StockController stockController = new StockController(stockModel, stockView, context);
+		stockView.setController(stockController);
+		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView, context);
+		thresholdView.setController(thresholdController);
 		
 		/*System.out.println(help);
 		while(true){

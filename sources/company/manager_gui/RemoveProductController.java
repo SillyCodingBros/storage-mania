@@ -2,15 +2,19 @@ package company.manager;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class RemoveProductController {
 
   private RemoveProductModel model;
   private RemoveProductView view;
+  private HashMap<String, Object> context;
 
-  public RemoveProductController(RemoveProductModel model, RemoveProductView view){
+  public RemoveProductController(RemoveProductModel model, RemoveProductView view, HashMap <String, Object>context){
     this.model = model;
     this.view = view;
+    this.context = context;
+
   }
 
   /*public void removeProduct(){

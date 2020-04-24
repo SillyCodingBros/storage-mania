@@ -6,7 +6,8 @@ import javax.swing.border.*;
 import javax.swing.table.*;
 
 public class RemoveProductView{
-    private JFrame window;
+    private RemoveProductController controller;
+    public JFrame window;
     private Font myFont;
     private Font Fonttable;
 	private Font FontTitle;
@@ -159,6 +160,9 @@ public class RemoveProductView{
         window.setVisible(false);
     }
 
+    public void setController(RemoveProductController controller){
+        this.controller = controller;
+    }
     /*public void promptBarcode(){
         System.out.print("To delete product barcode :\n\t> ");
     }

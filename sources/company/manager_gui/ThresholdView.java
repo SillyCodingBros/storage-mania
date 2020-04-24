@@ -6,7 +6,8 @@ import javax.swing.border.*;
 import javax.swing.table.*;
 
 public class ThresholdView{
-    private JFrame window;
+    private ThresholdController controller;
+    public JFrame window;
     private Font myFont;
     private Font Fonttable;
 	private Font FontTitle;
@@ -134,6 +135,11 @@ public class ThresholdView{
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(false);
     }
+
+    public void setController(ThresholdController controller){
+        this.controller = controller;
+    }
+    
     /*public void printStock(String str){
         System.out.println(str);
     }  */  

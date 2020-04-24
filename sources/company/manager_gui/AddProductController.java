@@ -5,15 +5,19 @@ import java.util.Scanner;
 import company.data.Stock;
 import company.data.StockProduct;
 import company.serial.SerializeStock;
+import java.util.HashMap;
+
 
 public class AddProductController {
 
     private AddProductModel model;
     private AddProductView view;
+    private HashMap<String, Object> context;
 
-    public AddProductController(AddProductModel model, AddProductView view){
+    public AddProductController(AddProductModel model, AddProductView view, HashMap<String, Object> context){
         this.model = model;
         this.view = view;
+        this.context = context;
     }
 
     public void addProduct(){

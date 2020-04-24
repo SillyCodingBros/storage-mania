@@ -5,7 +5,8 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 public class AddProductView{
-    private JFrame window;
+    private AddProductController controller;
+    public JFrame window;
     private Font myFont;
 	private Font FontTitle;
     private JButton buttonAddProduct;
@@ -186,6 +187,10 @@ public class AddProductView{
         window.setVisible(false);
 
 
+    }
+
+    public void setController(AddProductController controller){
+        this.controller = controller;
     }
     /*
     public void promptName(){

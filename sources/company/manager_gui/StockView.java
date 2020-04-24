@@ -7,7 +7,8 @@ import javax.swing.border.*;
 import javax.swing.table.*;
 
 public class StockView {
-    private JFrame window;
+    public JFrame window;
+    private StockController controller;
     private Font myFont;
     private Font Fonttable;
 	private Font FontTitle;
@@ -43,7 +44,7 @@ public class StockView {
         buttonAddProduct.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                window.setVisible(false);
+                controller.goAddProduct();
             }
         });
         
@@ -51,33 +52,52 @@ public class StockView {
 		buttonStock.setToolTipText("Button for view the stock");
 		buttonStock.setPreferredSize(new Dimension(280, 100));
         buttonStock.setFont(myFont);
-        //buttonStock.addActionListener(new ActionListener());
+        buttonStock.setEnabled(false);
         
         buttonProvider = new JButton("Provider");
 		buttonProvider.setToolTipText("Button for view the list of Provider");
 		buttonProvider.setPreferredSize(new Dimension(280, 100));
         buttonProvider.setFont(myFont);
-        //buttonProvider.addActionListener(new ActionListener());
-
+        buttonProvider.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                controller.goProvider();
+            }
+        });        
         
         buttonAddProvider = new JButton("Add Provider");
 		buttonAddProvider.setToolTipText("Button for add a Provider");
 		buttonAddProvider.setPreferredSize(new Dimension(280, 100));
         buttonAddProvider.setFont(myFont);
-        //buttonAddProvider.addActionListener(new ActionListener());
-        
+        buttonAddProvider.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                controller.goAddProvider();
+            }
+        }); 
+
         buttonRemoveProduct = new JButton("Remove Product");
 		buttonRemoveProduct.setToolTipText("Button for Remove a Product");
 		buttonRemoveProduct.setPreferredSize(new Dimension(280, 100));
 		buttonRemoveProduct.setFont(myFont);
-        //buttonRemoveProduct.addActionListener(new ActionListener());
+        buttonRemoveProduct.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                controller.goRemoveProduct();
+            }
+        }); 
 
 		buttonDetailProduct = new JButton("Detail Product");
 		buttonDetailProduct.setToolTipText("Button for view the product detail");
 		buttonDetailProduct.setPreferredSize(new Dimension(280, 100));
-		buttonDetailProduct.setFont(myFont);
-        //buttonDetailProduct.addActionListener(new ActionListener());
-
+        buttonDetailProduct.setFont(myFont);
+        buttonDetailProduct.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                controller.goDetailProduct();
+            }
+        });
+        
 		buttonThreshold = new JButton("Threshold");
 		buttonThreshold.setToolTipText("Button for view the product below threshold");
 		buttonThreshold.setPreferredSize(new Dimension(280, 100));
@@ -85,7 +105,7 @@ public class StockView {
         buttonThreshold.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                System.out.println("Lel thresh\n");
+                controller.goThresh();
             }
         });
 
@@ -154,6 +174,9 @@ public class StockView {
         window.setVisible(true);
     }
 
+    public void setController(StockController controller){
+        this.controller = controller;
+    }
     
     /*public void printStock(String str){      
         System.out.println(str);
