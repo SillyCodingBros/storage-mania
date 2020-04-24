@@ -80,4 +80,36 @@ public class AddProductController {
 
 
     }
+
+    public void goStock(){
+        view.window.setVisible(false);
+        StockView newView = (StockView) context.get("stock");
+        newView.window.setVisible(true);
+    }
+
+    public void goThresh(){
+        view.window.setVisible(false);
+        ThresholdView newView = (ThresholdView) context.get("threshold");
+        newView.window.setVisible(true);
+    }
+
+    public void goProvider(){
+        System.out.println("In an ideal world, program would switch to Provider MVC...\n");
+    }
+
+    public void goAddProvider(){
+        System.out.println("In an ideal world, program would switch to AddProvider MVC...\n");
+    }
+
+    public void goRemoveProduct(){
+        view.window.setVisible(false);
+        RemoveProductView newView = (RemoveProductView) context.get("removeProduct");
+        newView.window.setVisible(true);
+    }
+
+    public void goDetailProduct(){
+        view.window.setVisible(false);
+        ProductDetailView newView = (ProductDetailView) context.get("productDetail");
+        newView.window.setVisible(true);
+    }
 }

@@ -8,6 +8,7 @@ public class StockModel {
 
     public StockModel(Stock stock){
         this.stock = stock;
+        
     }
 
     public String getStockStr(){
