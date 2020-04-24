@@ -156,7 +156,7 @@ public class RemoveProductView{
 		window.setSize(1200,800);
 		window.setLocationRelativeTo(null);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
+        window.setVisible(false);
     }
 
     /*public void promptBarcode(){

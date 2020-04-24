@@ -43,7 +43,7 @@ public class StockView {
         buttonAddProduct.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                System.out.println("Lel test\n");
+                window.setVisible(false);
             }
         });
         

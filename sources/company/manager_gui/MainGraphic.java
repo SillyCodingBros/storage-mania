@@ -94,7 +94,7 @@ public class MainGraphic
 		//MVC stockMVC = new MVC("stockMVC"/*, this, new StockModel(), new StockView(), new StockController()*/);
 		//MVC productMVC = new MVC("productMVC"/*, this, new ProductModel(), new ProductView(), new ProductController()*/);
 		//MVC stockProductMVC = new MVC("stockProductMVC"/*, this, new stockProductModel(), new stockProductView(), new stockProductController()*/);
-		/*
+		
 		AddProductModel addProductModel = new AddProductModel(stock);
 		AddProductView addProductView = new AddProductView();
 		AddProductController addProductController = new AddProductController(addProductModel, addProductView);
@@ -106,15 +106,15 @@ public class MainGraphic
 		ProductDetailModel productDetailModel = new ProductDetailModel(stock);
 		ProductDetailView productDetailView = new ProductDetailView();
 		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView);
-		*/
+		
 		StockModel stockModel = new StockModel(stock);
 		StockView stockView = new StockView();
 		StockController stockController = new StockController(stockModel, stockView);
-		/*
+		
 		ThresholdModel thresholdModel = new ThresholdModel(stock);
 		ThresholdView thresholdView = new ThresholdView();
 		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView);
-		*/
+		
 		
 		/*System.out.println(help);
 		while(true){

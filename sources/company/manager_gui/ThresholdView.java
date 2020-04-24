@@ -132,7 +132,7 @@ public class ThresholdView{
 		window.setSize(1200,800);
 		window.setLocationRelativeTo(null);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
+        window.setVisible(false);
     }
     /*public void printStock(String str){
         System.out.println(str);
