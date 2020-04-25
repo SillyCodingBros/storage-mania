@@ -43,6 +43,7 @@ public class AddProductController {
     public void goStock(){
         view.window.setVisible(false);
         StockView newView = (StockView) context.get("stock");
+        newView.init();
         newView.window.setVisible(true);
     }
 
