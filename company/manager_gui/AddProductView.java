@@ -140,8 +140,7 @@ public class AddProductView{
 
                 if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE)
                     ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB)
-                    ||  (c == KeyEvent.VK_PERIOD)       || (c == KeyEvent.VK_COMMA)
-                    ||  (Character.isDigit(c))))
+                    ||  (c == KeyEvent.VK_PERIOD)       ||  (Character.isDigit(c))))
                 {
                 e.consume() ;
                 }
