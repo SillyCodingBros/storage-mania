@@ -179,8 +179,12 @@ public class StockView {
     }
 
     public void init(){
+        int rowCount = model.getRowCount();
+        //Remove rows one by one from the end of the table
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
         controller.loadStock();
-        //tableProduct.add
     }
 
     public void addRow(String name, Integer qty, Integer inb, Integer thresh, Integer barcode, Float price){
