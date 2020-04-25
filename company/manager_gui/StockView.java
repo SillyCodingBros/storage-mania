@@ -26,6 +26,7 @@ public class StockView {
     private JPanel paneltext;
     private JPanel panelConfirm;
     private JTable tableProduct;
+    private DefaultTableModel model;
     private JTableHeader header;
 
 
@@ -133,7 +134,7 @@ public class StockView {
 
         //tableProduct
         String[] head = {"Name Product", "Quantity", "Threshold", "Price", "Barcode"};
-        Object[][] data = {{"1","2","3","4","5"}};
+        Object[][] data = {};
 
 
         //panel right
@@ -182,9 +183,10 @@ public class StockView {
         paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS));
         paneltext.setBackground(Color.BLACK);
 
-
-        tableProduct = new JTable(data, head);
+        model = new DefaultTableModel(data,head);
+        tableProduct = new JTable(model);
         tableProduct.setBackground(Color.GRAY);
+
 
         header = tableProduct.getTableHeader();
         header.setFont(Fonttable);
@@ -196,7 +198,6 @@ public class StockView {
 
 
 		panelCenter.add(paneltext, BorderLayout.WEST);
-
         //windows setting
         window.setTitle("Storage Mania");
 		window.setSize(1200,800);
@@ -209,6 +210,14 @@ public class StockView {
         this.controller = controller;
     }
 
+    public void init(){
+        controller.loadStock();
+        //tableProduct.add
+    }
+
+    public void addRow(String name, Integer qty, Integer inb, Integer thresh, Integer barcode, Float price){
+        model.insertRow(tableProduct.getRowCount(), new Object[]{name, qty, thresh, price, barcode});
+    }
     /*public void printStock(String str){
         System.out.println(str);
     }*/

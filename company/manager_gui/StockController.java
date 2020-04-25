@@ -1,6 +1,8 @@
 package company.manager_gui;
 
 import java.util.HashMap;
+import company.data.Stock;
+import company.data.StockProduct;
 
 public class StockController {
     private StockModel model;
@@ -45,7 +47,11 @@ public class StockController {
         ProductDetailView newView = (ProductDetailView) context.get("productDetail");
         newView.window.setVisible(true);
     }
-    /*public void getStockSummury(){
-        view.printStock(model.getStockStr());
-    }*/
+
+    public void loadStock(){
+        Stock stock = model.getStock();
+        for(StockProduct product : stock.stock){
+            view.addRow(product.name, product.quantity, product.inbound, product.threshold, product.barcode, product.price);
+        }
+    }
 }

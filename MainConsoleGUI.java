@@ -123,6 +123,7 @@ public class MainConsoleGUI
 		productDetailView.setController(productDetailController);
 		StockController stockController = new StockController(stockModel, stockView, context);
 		stockView.setController(stockController);
+		stockView.init();
 		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView, context);
 		thresholdView.setController(thresholdController);
 
