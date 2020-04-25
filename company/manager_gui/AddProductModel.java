@@ -12,28 +12,6 @@ public class AddProductModel{
         this.stock = stock;
     }
 
-    public Integer getInputInt(Scanner scan){
-        Integer data;
-
-        try{
-            data = scan.nextInt();
-            return data;
-        } catch(InputMismatchException err){
-            return -1;
-        }
-    }
-
-    public Float getInputFloat(Scanner scan){
-        Float data;
-
-        try{
-            data = scan.nextFloat();
-            return data;
-        } catch(InputMismatchException err){
-            return (float)-1.0;
-        }
-    }
-
     public Boolean addProduct(StockProduct product){
         Boolean res;
         res = stock.addProduct(product);

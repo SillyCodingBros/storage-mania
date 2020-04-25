@@ -18,11 +18,11 @@ public class AddProductView{
     private JButton buttonDetailProduct;
     private JButton buttonThreshold;
     private JButton buttonConfirm;
-    private JTextField fieldNameProduct;
-    private JTextField fieldQuantity;
-    private JTextField fieldThreshold;
-    private JTextField fieldPrice;
-    private JTextField fieldBarcode;
+    public JTextField fieldNameProduct;
+    public JTextField fieldQuantity;
+    public JTextField fieldThreshold;
+    public JTextField fieldPrice;
+    public JTextField fieldBarcode;
     private JPanel panelRight;
     private JPanel panelBottom;
     private JPanel panelCenter;
@@ -136,15 +136,6 @@ public class AddProductView{
             }
         });
 
-		//buttons left panel
-		buttonConfirm= new JButton("Confirm");
-		buttonConfirm.setToolTipText("Button for Remove a Product");
-		buttonConfirm.setPreferredSize(new Dimension(280, 50));
-        buttonConfirm.setForeground(new Color(255,153,0));
-		buttonConfirm.setFont(myFont);
-        buttonConfirm.setBackground(new Color(34,34,34));
-        buttonConfirm.setBorder(BorderFactory.createBevelBorder(0));
-
 		//field
 		fieldNameProduct = new JTextField();
 		fieldNameProduct.setFont(myFont);
@@ -210,6 +201,28 @@ public class AddProductView{
                 }    
             } 
          });
+
+        //buttons left panel
+		buttonConfirm= new JButton("Confirm");
+		buttonConfirm.setToolTipText("Button for Remove a Product");
+		buttonConfirm.setPreferredSize(new Dimension(280, 50));
+        buttonConfirm.setForeground(new Color(255,153,0));
+		buttonConfirm.setFont(myFont);
+        buttonConfirm.setBackground(new Color(34,34,34));
+        buttonConfirm.setBorder(BorderFactory.createBevelBorder(0));
+        buttonConfirm.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                controller.addProduct();
+                fieldNameProduct.setText("");
+                fieldBarcode.setText("");
+                fieldPrice.setText("");
+                fieldQuantity.setText("");
+                fieldThreshold.setText("");
+            }
+        });
+
+
         //panel right
         panelRight = new JPanel();
 		panelRight.setBorder(new EtchedBorder());
@@ -313,28 +326,7 @@ public class AddProductView{
     public void setController(AddProductController controller){
         this.controller = controller;
     }
-    /*
-    public void promptName(){
-        System.out.print("Input new product name :\n\t> ");
-    }
-    public void promptQuantity(){
-        System.out.print("Input new product quantity :\n\t> ");
-    }
-    public void printException(){
-        System.out.println("Error - Wrong input detected, please try again.");
-    }
-    public void promptThreshold(){
-        System.out.print("Input new product threshold :\n\t> ");
-    }
-    public void promptPrice(){
-        System.out.print("Input new product price :\n\t> ");
-    }
-    public void promptBarCode(){
-        System.out.print("Input new product barcode :\n\t> ");
-    }
-    public void printAddedProduct(String str){
-        System.out.println(str);
-    }*/
+    
     public void printCantAdd(){
         System.out.println("Error - This barcode is allready in use.");
     }
