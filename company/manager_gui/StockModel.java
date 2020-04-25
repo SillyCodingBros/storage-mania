@@ -8,10 +8,13 @@ public class StockModel {
 
     public StockModel(Stock stock){
         this.stock = stock;
-
     }
 
     public String getStockStr(){
         return stock.toString();
+    }
+
+    public Stock getStock(){
+        return this.stock;
     }
 }

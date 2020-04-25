@@ -44,6 +44,7 @@ public class AddProductController {
         //view.window.setVisible(false);
         StockView newView = (StockView) context.get("stock");
         //newView.window.setVisible(true);
+        newView.init();
         view.main_window.setContentPane(newView.window);
         view.main_window.repaint();
         view.main_window.revalidate();
@@ -53,6 +54,7 @@ public class AddProductController {
         //view.window.setVisible(false);
         ThresholdView newView = (ThresholdView) context.get("threshold");
         //newView.window.setVisible(true);
+        newView.init();
         view.main_window.setContentPane(newView.window);
         view.main_window.repaint();
         view.main_window.revalidate();
@@ -64,15 +66,6 @@ public class AddProductController {
 
     public void goAddProvider(){
         System.out.println("In an ideal world, program would switch to AddProvider MVC...\n");
-    }
-
-    public void goRemoveProduct(){
-        //view.window.setVisible(false);
-        RemoveProductView newView = (RemoveProductView) context.get("removeProduct");
-        //newView.window.setVisible(true);
-        view.main_window.setContentPane(newView.window);
-        view.main_window.repaint();
-        view.main_window.revalidate();
     }
 
     public void goDetailProduct(){

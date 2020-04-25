@@ -41,10 +41,6 @@ public class MainConsoleGUI
 		AddProductView addProductView = new AddProductView(window);
 		context.put("addProduct", addProductView);
 
-		RemoveProductModel removeProductModel = new RemoveProductModel(stock);
-		RemoveProductView removeProductView = new RemoveProductView(window);
-		context.put("removeProduct", removeProductView);
-
 		ProductDetailModel productDetailModel = new ProductDetailModel(stock);
 		ProductDetailView productDetailView = new ProductDetailView(window);
 		context.put("productDetail", productDetailView);
@@ -59,14 +55,14 @@ public class MainConsoleGUI
 
 		AddProductController addProductController = new AddProductController(addProductModel, addProductView, context);
 		addProductView.setController(addProductController);
-		RemoveProductController removeProductController = new RemoveProductController(removeProductModel, removeProductView, context);
-		removeProductView.setController(removeProductController);
 		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, context);
 		productDetailView.setController(productDetailController);
 		StockController stockController = new StockController(stockModel, stockView, context);
 		stockView.setController(stockController);
+		stockView.init();
 		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView, context);
 		thresholdView.setController(thresholdController);
+		thresholdView.init();
 
 
 

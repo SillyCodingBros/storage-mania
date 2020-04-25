@@ -84,5 +84,13 @@ public class Stock implements java.io.Serializable
 		if (sb.toString().equals("")) return "No Products Bellow Threshold\n";
 		return "Name   Qty Owned(inb.)/lim.\tBarcode\t\tPrice\n" + sb.toString();
 	}
+
+	public Stock belowThresholdStock(){
+		Stock thresh = new Stock();
+		for(StockProduct product : stock){
+			if(product.quantity <= product.threshold) thresh.addProduct(product);
+		}
+		return thresh;
+	}
 }
 

@@ -1,5 +1,7 @@
 package company.manager_gui;
 
+import company.data.Stock;
+import company.data.StockProduct;
 import java.util.HashMap;
 
 public class ThresholdController{
@@ -28,6 +30,7 @@ public class ThresholdController{
         //view.window.setVisible(false);
         StockView newView = (StockView) context.get("stock");
         //newView.window.setVisible(true);
+        newView.init();
         view.main_window.setContentPane(newView.window);
         view.main_window.repaint();
         view.main_window.revalidate();
@@ -41,15 +44,6 @@ public class ThresholdController{
         System.out.println("In an ideal world, program would switch to AddProvider MVC...\n");
     }
 
-    public void goRemoveProduct(){
-        //view.window.setVisible(false);
-        RemoveProductView newView = (RemoveProductView) context.get("removeProduct");
-        //newView.window.setVisible(true);
-        view.main_window.setContentPane(newView.window);
-        view.main_window.repaint();
-        view.main_window.revalidate();
-    }
-
     public void goDetailProduct(){
         //view.window.setVisible(false);
         ProductDetailView newView = (ProductDetailView) context.get("productDetail");
@@ -57,6 +51,13 @@ public class ThresholdController{
         view.main_window.setContentPane(newView.window);
         view.main_window.repaint();
         view.main_window.revalidate();
+    }
+
+    public void loadThresh(){
+        Stock thresh = model.getThresholdStock();
+        for(StockProduct product : thresh.stock){
+            view.addRow(product.name, product.quantity, product.inbound, product.threshold, product.barcode, product.price);
+        }
     }
     /*public void threshold(){
         view.printStock(model.getThresholdStr());

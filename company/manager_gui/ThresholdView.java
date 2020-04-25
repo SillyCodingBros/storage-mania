@@ -17,9 +17,6 @@ public class ThresholdView{
     private JButton buttonStock;
     private JButton buttonProvider;
     private JButton buttonAddProvider;
-    private JButton buttonRemoveProduct;
-    private JButton buttonDetailProduct;
-    private JButton buttonThreshold;
     private JPanel panelRight;
     private JPanel panelBottom;
     private JPanel panelCenter;
@@ -27,6 +24,7 @@ public class ThresholdView{
     private JPanel paneltext;
     private JPanel panelConfirm;
     private JTable tableProduct;
+    private DefaultTableModel model;
     private JTableHeader header;
 
 
@@ -97,60 +95,11 @@ public class ThresholdView{
             }
         });
 
-        buttonRemoveProduct = new JButton("Remove Product");
-		buttonRemoveProduct.setToolTipText("Button for Remove a Product");
-		buttonRemoveProduct.setPreferredSize(new Dimension(280, 100));
-        buttonRemoveProduct.setForeground(new Color(255,153,0));
-		buttonRemoveProduct.setFont(myFont);
-        buttonRemoveProduct.setBackground(new Color(34,34,34));
-        buttonRemoveProduct.setBorder(BorderFactory.createBevelBorder(0));
-        buttonRemoveProduct.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                controller.goRemoveProduct();
-            }
-        });
-
-		buttonDetailProduct = new JButton("Detail Product");
-		buttonDetailProduct.setToolTipText("Button for view the product detail");
-		buttonDetailProduct.setPreferredSize(new Dimension(280, 100));
-		buttonDetailProduct.setForeground(new Color(255,153,0));
-        buttonDetailProduct.setFont(myFont);
-        buttonDetailProduct.setBackground(new Color(34,34,34));
-        buttonDetailProduct.setBorder(BorderFactory.createBevelBorder(0));
-        buttonDetailProduct.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                controller.goDetailProduct();
-            }
-        });
-
-		buttonThreshold = new JButton("Threshold");
-		buttonThreshold.setToolTipText("Button for view the product below threshold");
-		buttonThreshold.setPreferredSize(new Dimension(280, 100));
-        buttonThreshold.setForeground(new Color(255,153,0));
-		buttonThreshold.setFont(myFont);
-        buttonThreshold.setBackground(new Color(34,34,34));
-        buttonThreshold.setBorder(BorderFactory.createBevelBorder(0));
-        buttonThreshold.setEnabled(false);
-
 
         //tableProduct
         String[] head = {"Name Product", "Quantity", "Threshold", "Price", "Barcode"};
-        Object[][] data = {{"1","2","3","4","5"}};
+        Object[][] data = {};
 
-
-        //panel right
-        panelRight = new JPanel();
-		panelRight.setBorder(new EtchedBorder());
-		panelRight.setPreferredSize(new Dimension(290, 110));
-        panelRight.setBackground(Color.BLACK);
-
-		panelRight.add(buttonDetailProduct);
-		panelRight.add(buttonThreshold);
-        panelRight.add(buttonRemoveProduct);
-
-        window.add(panelRight, BorderLayout.EAST);
 
         //panel bottom
         panelBottom = new JPanel();
@@ -185,7 +134,7 @@ public class ThresholdView{
         paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS));
         paneltext.setBackground(Color.BLACK);
 
-
+        model = new DefaultTableModel(data,head);
         tableProduct = new JTable(data, head);
         tableProduct.setBackground(Color.GRAY);
 
@@ -212,6 +161,18 @@ public class ThresholdView{
         this.controller = controller;
     }
 
+    public void init(){
+        int rowCount = model.getRowCount();
+        //Remove rows one by one from the end of the table
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        controller.loadThresh();
+    }
+
+    public void addRow(String name, Integer qty, Integer inb, Integer thresh, Integer barcode, Float price){
+        model.insertRow(tableProduct.getRowCount(), new Object[]{name, qty, thresh, price, barcode});
+    }
     /*public void printStock(String str){
         System.out.println(str);
     }  */
