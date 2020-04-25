@@ -4,11 +4,9 @@ import company.data.Stock;
 
 public class ThresholdModel{
     private Stock stock;
-    private Stock thresholdStock;
 
     public ThresholdModel(Stock stock){
         this.stock = stock;
-        this.thresholdStock = stock.belowThresholdStock();
     }
 
     public String getThresholdStr(){
@@ -16,6 +14,6 @@ public class ThresholdModel{
     }
 
     public Stock getThresholdStock(){
-        return this.thresholdStock;
+        return stock.belowThresholdStock();
     }
 }

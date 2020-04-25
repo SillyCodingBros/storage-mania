@@ -88,7 +88,9 @@ public class Stock implements java.io.Serializable
 	public Stock belowThresholdStock(){
 		Stock thresh = new Stock();
 		for(StockProduct product : stock){
-			if(product.quantity <= product.threshold) thresh.addProduct(product);
+			if(product.quantity <= product.threshold){
+				thresh.addProduct(product);
+			} 
 		}
 		return thresh;
 	}
