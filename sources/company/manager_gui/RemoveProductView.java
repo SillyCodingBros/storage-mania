@@ -43,7 +43,10 @@ public class RemoveProductView{
         buttonAddProduct = new JButton("Add Product");
         buttonAddProduct.setToolTipText("A button for add a product");
 		buttonAddProduct.setPreferredSize(new Dimension(260, 100));
+        buttonAddProduct.setForeground(new Color(255,153,0));
         buttonAddProduct.setFont(myFont);
+        buttonAddProduct.setBackground(new Color(34,34,34));  
+        buttonAddProduct.setBorder(BorderFactory.createBevelBorder(0)); 
         buttonAddProduct.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -54,7 +57,10 @@ public class RemoveProductView{
         buttonStock = new JButton("Stock");
 		buttonStock.setToolTipText("Button for view the stock");
 		buttonStock.setPreferredSize(new Dimension(280, 100));
+        buttonStock.setForeground(new Color(255,153,0));
         buttonStock.setFont(myFont);
+        buttonStock.setBackground(new Color(34,34,34));   
+        buttonStock.setBorder(BorderFactory.createBevelBorder(0));
         buttonStock.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -65,7 +71,10 @@ public class RemoveProductView{
         buttonProvider = new JButton("Provider");
 		buttonProvider.setToolTipText("Button for view the list of Provider");
 		buttonProvider.setPreferredSize(new Dimension(280, 100));
+        buttonProvider.setForeground(new Color(255,153,0));
         buttonProvider.setFont(myFont);
+        buttonProvider.setBackground(new Color(34,34,34));   
+        buttonProvider.setBorder(BorderFactory.createBevelBorder(0)); 
         buttonProvider.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -76,7 +85,10 @@ public class RemoveProductView{
         buttonAddProvider = new JButton("Add Provider");
 		buttonAddProvider.setToolTipText("Button for add a Provider");
 		buttonAddProvider.setPreferredSize(new Dimension(280, 100));
+        buttonAddProvider.setForeground(new Color(255,153,0));
         buttonAddProvider.setFont(myFont);
+        buttonAddProvider.setBackground(new Color(34,34,34));   
+        buttonAddProvider.setBorder(BorderFactory.createBevelBorder(0)); 
         buttonAddProvider.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -87,13 +99,19 @@ public class RemoveProductView{
         buttonRemoveProduct = new JButton("Remove Product");
 		buttonRemoveProduct.setToolTipText("Button for Remove a Product");
 		buttonRemoveProduct.setPreferredSize(new Dimension(280, 100));
-        buttonRemoveProduct.setFont(myFont);
+        buttonRemoveProduct.setForeground(new Color(255,153,0));
+		buttonRemoveProduct.setFont(myFont);
+        buttonRemoveProduct.setBackground(new Color(34,34,34));   
+        buttonRemoveProduct.setBorder(BorderFactory.createBevelBorder(0)); 
         buttonRemoveProduct.setEnabled(false);
 
 		buttonDetailProduct = new JButton("Detail Product");
 		buttonDetailProduct.setToolTipText("Button for view the product detail");
 		buttonDetailProduct.setPreferredSize(new Dimension(280, 100));
+        buttonDetailProduct.setForeground(new Color(255,153,0));
         buttonDetailProduct.setFont(myFont);
+        buttonDetailProduct.setBackground(new Color(34,34,34));   
+        buttonDetailProduct.setBorder(BorderFactory.createBevelBorder(0)); 
         buttonDetailProduct.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -104,7 +122,10 @@ public class RemoveProductView{
 		buttonThreshold = new JButton("Threshold");
 		buttonThreshold.setToolTipText("Button for view the product below threshold");
 		buttonThreshold.setPreferredSize(new Dimension(280, 100));
-        buttonThreshold.setFont(myFont);
+        buttonThreshold.setForeground(new Color(255,153,0));
+		buttonThreshold.setFont(myFont);
+        buttonThreshold.setBackground(new Color(34,34,34));   
+        buttonThreshold.setBorder(BorderFactory.createBevelBorder(0)); 
         buttonThreshold.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -116,7 +137,10 @@ public class RemoveProductView{
 		buttonConfirm= new JButton("Confirm");
 		buttonConfirm.setToolTipText("Button for Remove a Product");
 		buttonConfirm.setPreferredSize(new Dimension(280, 50));
+		buttonConfirm.setForeground(new Color(255,153,0));
 		buttonConfirm.setFont(myFont);
+        buttonConfirm.setBackground(new Color(34,34,34));   
+        buttonConfirm.setBorder(BorderFactory.createBevelBorder(0));
 
 		//field
         fieldBarcode = new JTextField();
@@ -132,6 +156,7 @@ public class RemoveProductView{
         panelRight = new JPanel();
 		panelRight.setBorder(new EtchedBorder());
 		panelRight.setPreferredSize(new Dimension(290, 110));
+        panelRight.setBackground(Color.BLACK);   
 		
 		panelRight.add(buttonDetailProduct);
 		panelRight.add(buttonThreshold);
@@ -142,6 +167,7 @@ public class RemoveProductView{
         //panel bottom
         panelBottom = new JPanel();
 		panelBottom.setBorder(new EtchedBorder());
+        panelBottom.setBackground(Color.BLACK);   
 
 		panelBottom.add(buttonAddProduct);
 		panelBottom.add(buttonStock);
@@ -153,10 +179,12 @@ public class RemoveProductView{
         //panel center
 		panelCenter = new JPanel();
         panelCenter.setBorder(new EtchedBorder());
+        panelCenter.setBackground(new Color(34,34,34));   
         
         //title page
 		title = new JLabel("Remove Product");
 		title.setFont(FontTitle);
+        title.setForeground(new Color(255,153,0));
 
 		panelCenter.setLayout(new BoxLayout(panelCenter, BoxLayout.Y_AXIS)); 
 		panelCenter.add(title);
@@ -167,15 +195,21 @@ public class RemoveProductView{
 		paneltext = new JPanel();
 		paneltext.setBorder(new EtchedBorder());
         paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS)); 
+        paneltext.setBackground(Color.BLACK);   
 
         
         barcode = new JLabel("Barcode");  
 		barcode.setFont(myFont);
+        barcode.setForeground(new Color(255,153,0));
         paneltext.add(barcode);
         
         tableProduct = new JTable(data, head);
+        tableProduct.setBackground(Color.GRAY); 
+
         header = tableProduct.getTableHeader();
         header.setFont(Fonttable);
+        header.setBackground(new Color(34,34,34)); 
+        header.setForeground(new Color(255,153,0));  
         tableProduct.setFont(Fonttable);
         tableProduct.setRowHeight(30);
 		paneltext.add(new JScrollPane(tableProduct), BorderLayout.CENTER);
@@ -185,6 +219,7 @@ public class RemoveProductView{
         panelConfirm.add(barcode);
 		panelConfirm.add(fieldBarcode);
         panelConfirm.add(buttonConfirm);
+        panelConfirm.setBackground(Color.BLACK);   
         panelConfirm.add(paneltext, BorderLayout.CENTER);
 
         panelCenter.add(panelConfirm, BorderLayout.NORTH);
