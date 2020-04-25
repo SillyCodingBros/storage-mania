@@ -1,4 +1,4 @@
-package company.manager;
+package company.manager_gui;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -48,17 +48,17 @@ public class AddProductView{
 		buttonAddProduct.setPreferredSize(new Dimension(260, 100));
         buttonAddProduct.setForeground(new Color(255,153,0));
         buttonAddProduct.setFont(myFont);
-        buttonAddProduct.setBackground(new Color(34,34,34));  
-        buttonAddProduct.setBorder(BorderFactory.createBevelBorder(0)); 
+        buttonAddProduct.setBackground(new Color(34,34,34));
+        buttonAddProduct.setBorder(BorderFactory.createBevelBorder(0));
         buttonAddProduct.setEnabled(false);
-        
+
         buttonStock = new JButton("Stock");
 		buttonStock.setToolTipText("Button for view the stock");
 		buttonStock.setPreferredSize(new Dimension(280, 100));
         buttonStock.setForeground(new Color(255,153,0));
         buttonStock.setFont(myFont);
-        buttonStock.setBackground(new Color(34,34,34));   
-        buttonStock.setBorder(BorderFactory.createBevelBorder(0)); 
+        buttonStock.setBackground(new Color(34,34,34));
+        buttonStock.setBorder(BorderFactory.createBevelBorder(0));
         buttonStock.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -71,7 +71,7 @@ public class AddProductView{
 		buttonProvider.setPreferredSize(new Dimension(280, 100));
         buttonProvider.setForeground(new Color(255,153,0));
         buttonProvider.setFont(myFont);
-        buttonProvider.setBackground(new Color(34,34,34));   
+        buttonProvider.setBackground(new Color(34,34,34));
         buttonProvider.setBorder(BorderFactory.createBevelBorder(0));
         buttonProvider.addActionListener(new ActionListener(){
             @Override
@@ -79,28 +79,28 @@ public class AddProductView{
                 controller.goProvider();
             }
         });
-        
+
         buttonAddProvider = new JButton("Add Provider");
 		buttonAddProvider.setToolTipText("Button for add a Provider");
 		buttonAddProvider.setPreferredSize(new Dimension(280, 100));
         buttonAddProvider.setForeground(new Color(255,153,0));
         buttonAddProvider.setFont(myFont);
-        buttonAddProvider.setBackground(new Color(34,34,34));   
-        buttonAddProvider.setBorder(BorderFactory.createBevelBorder(0)); 
+        buttonAddProvider.setBackground(new Color(34,34,34));
+        buttonAddProvider.setBorder(BorderFactory.createBevelBorder(0));
         buttonAddProvider.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 controller.goAddProvider();
             }
         });
-        
+
         buttonRemoveProduct = new JButton("Remove Product");
 		buttonRemoveProduct.setToolTipText("Button for Remove a Product");
 		buttonRemoveProduct.setPreferredSize(new Dimension(280, 100));
         buttonRemoveProduct.setForeground(new Color(255,153,0));
 		buttonRemoveProduct.setFont(myFont);
-        buttonRemoveProduct.setBackground(new Color(34,34,34));   
-        buttonRemoveProduct.setBorder(BorderFactory.createBevelBorder(0)); 
+        buttonRemoveProduct.setBackground(new Color(34,34,34));
+        buttonRemoveProduct.setBorder(BorderFactory.createBevelBorder(0));
         buttonRemoveProduct.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -113,7 +113,7 @@ public class AddProductView{
 		buttonDetailProduct.setPreferredSize(new Dimension(280, 100));
         buttonDetailProduct.setForeground(new Color(255,153,0));
         buttonDetailProduct.setFont(myFont);
-        buttonDetailProduct.setBackground(new Color(34,34,34));   
+        buttonDetailProduct.setBackground(new Color(34,34,34));
         buttonDetailProduct.setBorder(BorderFactory.createBevelBorder(0));
         buttonDetailProduct.addActionListener(new ActionListener(){
             @Override
@@ -127,8 +127,8 @@ public class AddProductView{
 		buttonThreshold.setPreferredSize(new Dimension(280, 100));
         buttonThreshold.setForeground(new Color(255,153,0));
 		buttonThreshold.setFont(myFont);
-        buttonThreshold.setBackground(new Color(34,34,34));   
-        buttonThreshold.setBorder(BorderFactory.createBevelBorder(0)); 
+        buttonThreshold.setBackground(new Color(34,34,34));
+        buttonThreshold.setBorder(BorderFactory.createBevelBorder(0));
         buttonThreshold.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -142,8 +142,8 @@ public class AddProductView{
 		buttonConfirm.setPreferredSize(new Dimension(280, 50));
         buttonConfirm.setForeground(new Color(255,153,0));
 		buttonConfirm.setFont(myFont);
-        buttonConfirm.setBackground(new Color(34,34,34));   
-        buttonConfirm.setBorder(BorderFactory.createBevelBorder(0)); 
+        buttonConfirm.setBackground(new Color(34,34,34));
+        buttonConfirm.setBorder(BorderFactory.createBevelBorder(0));
 
 		//field
 		fieldNameProduct = new JTextField();
@@ -161,23 +161,23 @@ public class AddProductView{
 
         fieldBarcode = new JTextField();
         fieldBarcode.setFont(myFont);
-        
+
         //panel right
         panelRight = new JPanel();
 		panelRight.setBorder(new EtchedBorder());
 		panelRight.setPreferredSize(new Dimension(290, 110));
-        panelRight.setBackground(Color.BLACK); 
-          
+        panelRight.setBackground(Color.BLACK);
+
 		panelRight.add(buttonDetailProduct);
 		panelRight.add(buttonThreshold);
         panelRight.add(buttonRemoveProduct);
-        
+
         window.add(panelRight, BorderLayout.EAST);
 
         //panel bottom
         panelBottom = new JPanel();
 		panelBottom.setBorder(new EtchedBorder());
-        panelBottom.setBackground(Color.BLACK);  
+        panelBottom.setBackground(Color.BLACK);
 
 		panelBottom.add(buttonAddProduct);
 		panelBottom.add(buttonStock);
@@ -185,27 +185,27 @@ public class AddProductView{
 		panelBottom.add(buttonAddProvider);
 
         window.add(panelBottom, BorderLayout.SOUTH);
-        
+
         //panel center
 		panelCenter = new JPanel();
         panelCenter.setBorder(new EtchedBorder());
-        panelCenter.setBackground(new Color(34,34,34));   
-        
+        panelCenter.setBackground(new Color(34,34,34));
+
         //title page
 		title = new JLabel("Add Product");
 		title.setFont(FontTitle);
         title.setForeground(new Color(255,153,0));
 
-		panelCenter.setLayout(new BoxLayout(panelCenter, BoxLayout.Y_AXIS)); 
+		panelCenter.setLayout(new BoxLayout(panelCenter, BoxLayout.Y_AXIS));
 		panelCenter.add(title);
-		
+
 		window.add(panelCenter, BorderLayout.CENTER);
 
         //panel in panel center
 		paneltext = new JPanel();
 		paneltext.setBorder(new EtchedBorder());
-		paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS)); 
-        paneltext.setBackground(Color.BLACK);   
+		paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS));
+        paneltext.setBackground(Color.BLACK);
 
 
 		nameProduct = new JLabel("Name Product");
@@ -216,28 +216,28 @@ public class AddProductView{
 		paneltext.add(fieldNameProduct);
 		paneltext.setFont(myFont);
 
-		quantity = new JLabel("Quantity");  
+		quantity = new JLabel("Quantity");
 		quantity.setFont(myFont);
         quantity.setForeground(new Color(255,153,0));
 		paneltext.add(quantity);
 
 		paneltext.add(fieldQuantity);
 
-		threshold = new JLabel("Threshold");  
+		threshold = new JLabel("Threshold");
 		threshold.setFont(myFont);
         threshold.setForeground(new Color(255,153,0));
 		paneltext.add(threshold);
 
 		paneltext.add(fieldThreshold);
 
-		price = new JLabel("Price");  
+		price = new JLabel("Price");
 		price.setFont(myFont);
         price.setForeground(new Color(255,153,0));
 		paneltext.add(price);
 
         paneltext.add(fieldPrice);
-        
-        barcode = new JLabel("Barcode");  
+
+        barcode = new JLabel("Barcode");
 		barcode.setFont(myFont);
         barcode.setForeground(new Color(255,153,0));
 		paneltext.add(barcode);
@@ -245,9 +245,9 @@ public class AddProductView{
 		paneltext.add(fieldBarcode);
 
 		panelConfirm = new JPanel();
-        panelConfirm.setBackground(Color.BLACK);   
+        panelConfirm.setBackground(Color.BLACK);
 		panelConfirm.add(buttonConfirm);
-		
+
 
 		panelCenter.add(paneltext, BorderLayout.WEST);
 		panelCenter.add(panelConfirm, BorderLayout.SOUTH);

@@ -1,4 +1,4 @@
-package company.manager;
+package company.manager_gui;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -53,7 +53,7 @@ public class RemoveProductController {
     AddProductView newView = (AddProductView) context.get("addProduct");
     newView.window.setVisible(true);
   }
-  
+
   public void goThresh(){
     view.window.setVisible(false);
     ThresholdView newView = (ThresholdView) context.get("threshold");

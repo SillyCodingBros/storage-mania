@@ -15,12 +15,12 @@ public class SerializeStock {
       //e.number = 101;
 
       try {
-         FileOutputStream fileOut = new FileOutputStream("../sources/saves/stock.ser");
+         FileOutputStream fileOut = new FileOutputStream("saves/stock.ser");
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
          out.writeObject(stock);
          out.close();
          fileOut.close();
-         System.out.println("Serialized data is saved in sources/saves/stock.ser");
+         System.out.println("Serialized data is saved in saves/stock.ser");
       } catch (IOException i) {
          i.printStackTrace();
       }

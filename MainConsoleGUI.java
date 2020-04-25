@@ -1,5 +1,8 @@
-package company.manager;
+import company.manager_gui.*;
 
+import java.awt.*;
+import java.applet.Applet;
+import java.util.HashMap;
 import java.util.Scanner;
 import company.data.Stock;
 import company.serial.DeserializeStock;
@@ -10,14 +13,14 @@ import company.serial.DeserializeStock;
  * @generated
  */
 
-public class MainConsole
+public class MainConsoleGUI
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public MainConsole(){
+	public MainConsoleGUI(){
 		super();
 	}
 
@@ -79,38 +82,51 @@ public class MainConsole
 	public static void main(String[] args) {
 		Stock stock = new Stock();
 		DeserializeStock.main(stock);
+		HashMap <String, Object> context = new HashMap<String, Object>();
 		//if (stock == null) stock = new Stock();
-		Scanner reader = new Scanner(System.in);
+		/*Scanner reader = new Scanner(System.in);
 		reader.useDelimiter(" ");
 		String input;
 		String help = "Avalable commands are : \n\t [e]xit : stops the machine, \n\t [h]elp : displays this message, \n\t"+
 						" [s]tock : displays stock state,\n\t [t]hreshold : displays products that may go out of stock soon, \n\t" +
 						" addp : add a new product entry, \n\t delp : delete a product entry, \n\t [d]etail : prints full details about a product" ;
-
+		*/
 		//MVC stockMVC = new MVC("stockMVC"/*, this, new StockModel(), new StockView(), new StockController()*/);
 		//MVC productMVC = new MVC("productMVC"/*, this, new ProductModel(), new ProductView(), new ProductController()*/);
 		//MVC stockProductMVC = new MVC("stockProductMVC"/*, this, new stockProductModel(), new stockProductView(), new stockProductController()*/);
+
 		AddProductModel addProductModel = new AddProductModel(stock);
 		AddProductView addProductView = new AddProductView();
-		AddProductController addProductController = new AddProductController(addProductModel, addProductView);
+		context.put("addProduct", addProductView);
 
 		RemoveProductModel removeProductModel = new RemoveProductModel(stock);
 		RemoveProductView removeProductView = new RemoveProductView();
-		RemoveProductController removeProductController = new RemoveProductController(removeProductModel, removeProductView);
+		context.put("removeProduct", removeProductView);
 
 		ProductDetailModel productDetailModel = new ProductDetailModel(stock);
 		ProductDetailView productDetailView = new ProductDetailView();
-		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView);
+		context.put("productDetail", productDetailView);
 
 		StockModel stockModel = new StockModel(stock);
 		StockView stockView = new StockView();
-		StockController stockController = new StockController(stockModel, stockView);
+		context.put("stock", stockView);
 
 		ThresholdModel thresholdModel = new ThresholdModel(stock);
 		ThresholdView thresholdView = new ThresholdView();
-		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView);
+		context.put("threshold", thresholdView);
 
-		System.out.println(help);
+		AddProductController addProductController = new AddProductController(addProductModel, addProductView, context);
+		addProductView.setController(addProductController);
+		RemoveProductController removeProductController = new RemoveProductController(removeProductModel, removeProductView, context);
+		removeProductView.setController(removeProductController);
+		ProductDetailController productDetailController = new ProductDetailController(productDetailModel, productDetailView, context);
+		productDetailView.setController(productDetailController);
+		StockController stockController = new StockController(stockModel, stockView, context);
+		stockView.setController(stockController);
+		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView, context);
+		thresholdView.setController(thresholdController);
+
+		/*System.out.println(help);
 		while(true){
 			System.out.print(">");
 			input = reader.nextLine();
@@ -139,7 +155,7 @@ public class MainConsole
 				System.out.println("Unknown command, type 'help' to see supported commands.");
 			}
 		}
-		reader.close();
+		reader.close();*/
 
 	}
 }

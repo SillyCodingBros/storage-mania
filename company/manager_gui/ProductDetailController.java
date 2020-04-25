@@ -1,4 +1,4 @@
-package company.manager;
+package company.manager_gui;
 
 import java.util.Scanner;
 import java.util.HashMap;
@@ -14,7 +14,7 @@ public class ProductDetailController{
         this.view = view;
         this.context = context;
 
-    }   
+    }
 
     public void productDetail(){
         /*Integer barcode;

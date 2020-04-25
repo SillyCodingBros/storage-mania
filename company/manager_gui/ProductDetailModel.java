@@ -1,4 +1,4 @@
-package company.manager;
+package company.manager_gui;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

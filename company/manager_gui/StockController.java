@@ -1,29 +1,28 @@
-package company.manager;
+package company.manager_gui;
 
 import java.util.HashMap;
 
-public class ThresholdController{
-
-    private ThresholdModel model;
-    private ThresholdView view;
+public class StockController {
+    private StockModel model;
+    private StockView view;
     private HashMap<String, Object> context;
 
-    public ThresholdController(ThresholdModel model, ThresholdView view, HashMap<String, Object> context){
+    public StockController(StockModel model, StockView view, HashMap<String, Object>context){
         this.model = model;
         this.view = view;
         this.context = context;
 
     }
 
-    public void goAddProduct(){
+    public void goThresh(){
         view.window.setVisible(false);
-        AddProductView newView = (AddProductView) context.get("addProduct");
+        ThresholdView newView = (ThresholdView) context.get("threshold");
         newView.window.setVisible(true);
     }
 
-    public void goStock(){
+    public void goAddProduct(){
         view.window.setVisible(false);
-        StockView newView = (StockView) context.get("stock");
+        AddProductView newView = (AddProductView) context.get("addProduct");
         newView.window.setVisible(true);
     }
 
@@ -46,8 +45,7 @@ public class ThresholdController{
         ProductDetailView newView = (ProductDetailView) context.get("productDetail");
         newView.window.setVisible(true);
     }
-    /*public void threshold(){
-        view.printStock(model.getThresholdStr());
+    /*public void getStockSummury(){
+        view.printStock(model.getStockStr());
     }*/
-
 }

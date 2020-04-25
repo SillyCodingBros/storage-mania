@@ -1,4 +1,4 @@
-package company.manager;
+package company.manager_gui;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -59,7 +59,7 @@ public class AddProductController {
         }else{
             summury += Float.toString(newProduct.price) + "€. Ref : ";
         }
-        
+
         view.promptBarCode();
         newProduct.barcode = model.getInputInt(scan);
         if(newProduct.barcode == -1){

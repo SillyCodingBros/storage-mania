@@ -1,4 +1,4 @@
-package company.manager;
+package company.manager_gui;
 
 import company.data.StockProduct;
 import company.serial.SerializeStock;
