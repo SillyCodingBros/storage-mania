@@ -149,19 +149,67 @@ public class AddProductView{
 		fieldNameProduct = new JTextField();
 		fieldNameProduct.setFont(myFont);
 		fieldNameProduct.setPreferredSize(new Dimension(200, 20));
-
+        
+         
 		fieldQuantity = new JTextField();
 		fieldQuantity.setFont(myFont);
-
+        fieldQuantity.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) { 
+                char c = e.getKeyChar() ;
+                    
+                if (!   ((c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE) 
+                    ||  (c == KeyEvent.VK_ENTER)      || (c == KeyEvent.VK_TAB) 
+                    ||  (Character.isDigit(c)))) 
+                {
+                e.consume() ;
+                }    
+            } 
+         });
+         
 		fieldThreshold = new JTextField();
 		fieldThreshold.setFont(myFont);
+        fieldThreshold.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) { 
+                char c = e.getKeyChar() ;
+                    
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE) 
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB) 
+                    ||  (Character.isDigit(c)))) 
+                {
+                e.consume() ;
+                }    
+            } 
+         });
 
 		fieldPrice = new JTextField();
         fieldPrice.setFont(myFont);
-
+        fieldPrice.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) { 
+                char c = e.getKeyChar() ;
+                    
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE) 
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB) 
+                    ||  (c == KeyEvent.VK_PERIOD)       || (c == KeyEvent.VK_COMMA)
+                    ||  (Character.isDigit(c)))) 
+                {
+                e.consume() ;
+                }    
+            } 
+         });
         fieldBarcode = new JTextField();
         fieldBarcode.setFont(myFont);
-
+        fieldBarcode.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) { 
+                char c = e.getKeyChar() ;
+                    
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE) 
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB) 
+                    ||  (Character.isDigit(c)))) 
+                {
+                e.consume() ;
+                }    
+            } 
+         });
         //panel right
         panelRight = new JPanel();
 		panelRight.setBorder(new EtchedBorder());
