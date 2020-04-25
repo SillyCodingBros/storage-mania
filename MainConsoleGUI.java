@@ -120,6 +120,7 @@ public class MainConsoleGUI
 		stockView.init();
 		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView, context);
 		thresholdView.setController(thresholdController);
+		thresholdView.init();
 
 		/*System.out.println(help);
 		while(true){

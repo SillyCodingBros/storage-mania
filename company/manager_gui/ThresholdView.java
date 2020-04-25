@@ -23,6 +23,7 @@ public class ThresholdView{
     private JPanel paneltext;
     private JPanel panelConfirm;
     private JTable tableProduct;
+    private DefaultTableModel model;
     private JTableHeader header;
 
 
@@ -93,7 +94,7 @@ public class ThresholdView{
 
         //tableProduct
         String[] head = {"Name Product", "Quantity", "Threshold", "Price", "Barcode"};
-        Object[][] data = {{"1","2","3","4","5"}};
+        Object[][] data = {};
 
 
         //panel bottom
@@ -129,7 +130,7 @@ public class ThresholdView{
         paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS));
         paneltext.setBackground(Color.BLACK);
 
-
+        model = new DefaultTableModel(data,head);
         tableProduct = new JTable(data, head);
         tableProduct.setBackground(Color.GRAY);
 
@@ -156,6 +157,18 @@ public class ThresholdView{
         this.controller = controller;
     }
 
+    public void init(){
+        int rowCount = model.getRowCount();
+        //Remove rows one by one from the end of the table
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        controller.loadThresh();
+    }
+
+    public void addRow(String name, Integer qty, Integer inb, Integer thresh, Integer barcode, Float price){
+        model.insertRow(tableProduct.getRowCount(), new Object[]{name, qty, thresh, price, barcode});
+    }
     /*public void printStock(String str){
         System.out.println(str);
     }  */

@@ -47,6 +47,7 @@ public class ProductDetailController{
     public void goThresh(){
         view.window.setVisible(false);
         ThresholdView newView = (ThresholdView) context.get("threshold");
+        newView.init();
         newView.window.setVisible(true);
     }
 

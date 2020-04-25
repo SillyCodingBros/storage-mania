@@ -1,5 +1,7 @@
 package company.manager_gui;
 
+import company.data.Stock;
+import company.data.StockProduct;
 import java.util.HashMap;
 
 public class ThresholdController{
@@ -40,6 +42,13 @@ public class ThresholdController{
         view.window.setVisible(false);
         ProductDetailView newView = (ProductDetailView) context.get("productDetail");
         newView.window.setVisible(true);
+    }
+
+    public void loadThresh(){
+        Stock thresh = model.getThresholdStock();
+        for(StockProduct product : thresh.stock){
+            view.addRow(product.name, product.quantity, product.inbound, product.threshold, product.barcode, product.price);
+        }
     }
     /*public void threshold(){
         view.printStock(model.getThresholdStr());
