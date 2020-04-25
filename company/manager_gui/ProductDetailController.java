@@ -57,12 +57,6 @@ public class ProductDetailController{
         System.out.println("In an ideal world, program would switch to AddProvider MVC...\n");
     }
 
-    public void goRemoveProduct(){
-        view.window.setVisible(false);
-        RemoveProductView newView = (RemoveProductView) context.get("removeProduct");
-        newView.window.setVisible(true);
-    }
-
     public void goAddProduct(){
         view.window.setVisible(false);
         AddProductView newView = (AddProductView) context.get("addProduct");
