@@ -22,7 +22,7 @@ public class AddProductController {
 
     public void addProduct(){
         StockProduct newProduct = new StockProduct();
-        
+
         String name = view.fieldNameProduct.getText();
         int quantity = Integer.parseInt(view.fieldQuantity.getText());
         int threshold = Integer.parseInt(view.fieldThreshold.getText());
@@ -34,22 +34,28 @@ public class AddProductController {
         newProduct.threshold = threshold;
         newProduct.price = price;
         newProduct.barcode = barcode;
-        
+
         if(model.addProduct(newProduct) == false){
             view.printCantAdd();
         }
     }
 
     public void goStock(){
-        view.window.setVisible(false);
+        //view.window.setVisible(false);
         StockView newView = (StockView) context.get("stock");
-        newView.window.setVisible(true);
+        //newView.window.setVisible(true);
+        view.main_window.setContentPane(newView.window);
+        view.main_window.repaint();
+        view.main_window.revalidate();
     }
 
     public void goThresh(){
-        view.window.setVisible(false);
+        //view.window.setVisible(false);
         ThresholdView newView = (ThresholdView) context.get("threshold");
-        newView.window.setVisible(true);
+        //newView.window.setVisible(true);
+        view.main_window.setContentPane(newView.window);
+        view.main_window.repaint();
+        view.main_window.revalidate();
     }
 
     public void goProvider(){
@@ -61,14 +67,20 @@ public class AddProductController {
     }
 
     public void goRemoveProduct(){
-        view.window.setVisible(false);
+        //view.window.setVisible(false);
         RemoveProductView newView = (RemoveProductView) context.get("removeProduct");
-        newView.window.setVisible(true);
+        //newView.window.setVisible(true);
+        view.main_window.setContentPane(newView.window);
+        view.main_window.repaint();
+        view.main_window.revalidate();
     }
 
     public void goDetailProduct(){
-        view.window.setVisible(false);
+        //view.window.setVisible(false);
         ProductDetailView newView = (ProductDetailView) context.get("productDetail");
-        newView.window.setVisible(true);
+        //newView.window.setVisible(true);
+        view.main_window.setContentPane(newView.window);
+        view.main_window.repaint();
+        view.main_window.revalidate();
     }
 }

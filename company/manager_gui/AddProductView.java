@@ -7,7 +7,8 @@ import javax.swing.border.*;
 
 public class AddProductView{
     private AddProductController controller;
-    public JFrame window;
+    public JPanel window;
+    public JFrame main_window;
     private Font myFont;
 	private Font FontTitle;
     private JButton buttonAddProduct;
@@ -36,8 +37,11 @@ public class AddProductView{
     private JPanel panelConfirm;
 
 
-    public AddProductView(){
-        window = new JFrame();
+    public AddProductView(JFrame main_win){
+        this.main_window = main_win;
+        window = new JPanel();
+        window.setSize(main_window.getSize());
+        window.setLayout(new BorderLayout());
         //Font size
         myFont = new Font("Comic Sans MS", Font.BOLD, 25);
         FontTitle = new Font("Comic Sans MS", Font.BOLD, 50);
@@ -140,66 +144,66 @@ public class AddProductView{
 		fieldNameProduct = new JTextField();
 		fieldNameProduct.setFont(myFont);
 		fieldNameProduct.setPreferredSize(new Dimension(200, 20));
-        
-         
+
+
 		fieldQuantity = new JTextField();
 		fieldQuantity.setFont(myFont);
         fieldQuantity.addKeyListener(new KeyAdapter() {
-            public void keyTyped (KeyEvent e) { 
+            public void keyTyped (KeyEvent e) {
                 char c = e.getKeyChar() ;
-                    
-                if (!   ((c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE) 
-                    ||  (c == KeyEvent.VK_ENTER)      || (c == KeyEvent.VK_TAB) 
-                    ||  (Character.isDigit(c)))) 
+
+                if (!   ((c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE)
+                    ||  (c == KeyEvent.VK_ENTER)      || (c == KeyEvent.VK_TAB)
+                    ||  (Character.isDigit(c))))
                 {
                 e.consume() ;
-                }    
-            } 
+                }
+            }
          });
-         
+
 		fieldThreshold = new JTextField();
 		fieldThreshold.setFont(myFont);
         fieldThreshold.addKeyListener(new KeyAdapter() {
-            public void keyTyped (KeyEvent e) { 
+            public void keyTyped (KeyEvent e) {
                 char c = e.getKeyChar() ;
-                    
-                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE) 
-                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB) 
-                    ||  (Character.isDigit(c)))) 
+
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE)
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB)
+                    ||  (Character.isDigit(c))))
                 {
                 e.consume() ;
-                }    
-            } 
+                }
+            }
          });
 
 		fieldPrice = new JTextField();
         fieldPrice.setFont(myFont);
         fieldPrice.addKeyListener(new KeyAdapter() {
-            public void keyTyped (KeyEvent e) { 
+            public void keyTyped (KeyEvent e) {
                 char c = e.getKeyChar() ;
-                    
-                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE) 
-                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB) 
+
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE)
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB)
                     ||  (c == KeyEvent.VK_PERIOD)       || (c == KeyEvent.VK_COMMA)
-                    ||  (Character.isDigit(c)))) 
+                    ||  (Character.isDigit(c))))
                 {
                 e.consume() ;
-                }    
-            } 
+                }
+            }
          });
         fieldBarcode = new JTextField();
         fieldBarcode.setFont(myFont);
         fieldBarcode.addKeyListener(new KeyAdapter() {
-            public void keyTyped (KeyEvent e) { 
+            public void keyTyped (KeyEvent e) {
                 char c = e.getKeyChar() ;
-                    
-                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE) 
-                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB) 
-                    ||  (Character.isDigit(c)))) 
+
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE)
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB)
+                    ||  (Character.isDigit(c))))
                 {
                 e.consume() ;
-                }    
-            } 
+                }
+            }
          });
 
         //buttons left panel
@@ -314,11 +318,11 @@ public class AddProductView{
 		panelCenter.add(panelConfirm, BorderLayout.SOUTH);
 
         //windows setting
-        window.setTitle("Storage Mania");
-		window.setSize(1200,800);
-		window.setLocationRelativeTo(null);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(false);
+        //window.setTitle("Storage Mania");
+		    //window.setSize(1200,800);
+		    //window.setLocationRelativeTo(null);
+		    //window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //window.setVisible(false);
 
 
     }
@@ -326,7 +330,7 @@ public class AddProductView{
     public void setController(AddProductController controller){
         this.controller = controller;
     }
-    
+
     public void printCantAdd(){
         System.out.println("Error - This barcode is allready in use.");
     }

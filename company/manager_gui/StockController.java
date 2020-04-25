@@ -15,15 +15,21 @@ public class StockController {
     }
 
     public void goThresh(){
-        view.window.setVisible(false);
+        //view.window.setVisible(false);
         ThresholdView newView = (ThresholdView) context.get("threshold");
-        newView.window.setVisible(true);
+        //view.main_window = newView.window;
+        view.main_window.setContentPane(newView.window);
+        view.main_window.repaint();
+        view.main_window.revalidate();
     }
 
     public void goAddProduct(){
-        view.window.setVisible(false);
+        //view.window.setVisible(false);
         AddProductView newView = (AddProductView) context.get("addProduct");
-        newView.window.setVisible(true);
+        //newView.window.setVisible(true);
+        view.main_window.setContentPane(newView.window);
+        view.main_window.repaint();
+        view.main_window.revalidate();
     }
 
     public void goProvider(){
@@ -35,15 +41,21 @@ public class StockController {
     }
 
     public void goRemoveProduct(){
-        view.window.setVisible(false);
+        //view.window.setVisible(false);
         RemoveProductView newView = (RemoveProductView) context.get("removeProduct");
-        newView.window.setVisible(true);
+        //newView.window.setVisible(true);
+        view.main_window.setContentPane(newView.window);
+        view.main_window.repaint();
+        view.main_window.revalidate();
     }
 
     public void goDetailProduct(){
-        view.window.setVisible(false);
+        //view.window.setVisible(false);
         ProductDetailView newView = (ProductDetailView) context.get("productDetail");
-        newView.window.setVisible(true);
+        //newView.window.setVisible(true);
+        view.main_window.setContentPane(newView.window);
+        view.main_window.repaint();
+        view.main_window.revalidate();
     }
     /*public void getStockSummury(){
         view.printStock(model.getStockStr());

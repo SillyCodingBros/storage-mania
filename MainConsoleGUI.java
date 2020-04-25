@@ -4,85 +4,27 @@ import java.awt.*;
 import java.applet.Applet;
 import java.util.HashMap;
 import java.util.Scanner;
+import javax.swing.JFrame;
 import company.data.Stock;
 import company.serial.DeserializeStock;
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
-
 public class MainConsoleGUI
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
 	public MainConsoleGUI(){
 		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-
-	public void displayStockProducts() {
-		// TODO implement me
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-
-	public void displayPurchaseOrders() {
-		// TODO implement me
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-
-	public void printDisplayedData() {
-		// TODO implement me
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-
-	public void makePurchaseOrder() {
-		// TODO implement me
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-
-	public void displayBelowThresholds() {
-		// TODO implement me
 	}
 
 	public static void main(String[] args) {
 		Stock stock = new Stock();
 		DeserializeStock.main(stock);
+
 		HashMap <String, Object> context = new HashMap<String, Object>();
+
+		JFrame window = new JFrame();
+		window.setTitle("Storage Mania");
+		window.setSize(1200,800);
+		window.setLocationRelativeTo(null);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//if (stock == null) stock = new Stock();
 		/*Scanner reader = new Scanner(System.in);
 		reader.useDelimiter(" ");
@@ -96,23 +38,23 @@ public class MainConsoleGUI
 		//MVC stockProductMVC = new MVC("stockProductMVC"/*, this, new stockProductModel(), new stockProductView(), new stockProductController()*/);
 
 		AddProductModel addProductModel = new AddProductModel(stock);
-		AddProductView addProductView = new AddProductView();
+		AddProductView addProductView = new AddProductView(window);
 		context.put("addProduct", addProductView);
 
 		RemoveProductModel removeProductModel = new RemoveProductModel(stock);
-		RemoveProductView removeProductView = new RemoveProductView();
+		RemoveProductView removeProductView = new RemoveProductView(window);
 		context.put("removeProduct", removeProductView);
 
 		ProductDetailModel productDetailModel = new ProductDetailModel(stock);
-		ProductDetailView productDetailView = new ProductDetailView();
+		ProductDetailView productDetailView = new ProductDetailView(window);
 		context.put("productDetail", productDetailView);
 
 		StockModel stockModel = new StockModel(stock);
-		StockView stockView = new StockView();
+		StockView stockView = new StockView(window);
 		context.put("stock", stockView);
 
 		ThresholdModel thresholdModel = new ThresholdModel(stock);
-		ThresholdView thresholdView = new ThresholdView();
+		ThresholdView thresholdView = new ThresholdView(window);
 		context.put("threshold", thresholdView);
 
 		AddProductController addProductController = new AddProductController(addProductModel, addProductView, context);
@@ -125,6 +67,8 @@ public class MainConsoleGUI
 		stockView.setController(stockController);
 		ThresholdController thresholdController = new ThresholdController(thresholdModel, thresholdView, context);
 		thresholdView.setController(thresholdController);
+
+
 
 		/*System.out.println(help);
 		while(true){

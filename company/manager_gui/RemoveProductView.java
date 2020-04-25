@@ -8,7 +8,8 @@ import javax.swing.table.*;
 
 public class RemoveProductView{
     private RemoveProductController controller;
-    public JFrame window;
+    public JPanel window;
+    public JFrame main_window;
     private Font myFont;
     private Font Fonttable;
 	private Font FontTitle;
@@ -32,8 +33,11 @@ public class RemoveProductView{
     private JTableHeader header;
 
 
-    public RemoveProductView(){
-        window = new JFrame();
+    public RemoveProductView(JFrame main_win){
+        this.main_window = main_win;
+        window = new JPanel();
+        window.setSize(main_window.getSize());
+        window.setLayout(new BorderLayout());
         //Font size
         myFont = new Font("Comic Sans MS", Font.BOLD, 25);
         Fonttable = new Font("Comic Sans MS", Font.BOLD, 20);
@@ -226,11 +230,11 @@ public class RemoveProductView{
 		panelCenter.add(paneltext, BorderLayout.WEST);
 
         //windows setting
-        window.setTitle("Storage Mania");
-		window.setSize(1200,800);
-		window.setLocationRelativeTo(null);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(false);
+        //window.setTitle("Storage Mania");
+		//window.setSize(1200,800);
+		//window.setLocationRelativeTo(null);
+		//window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //window.setVisible(false);
     }
 
     public void setController(RemoveProductController controller){
