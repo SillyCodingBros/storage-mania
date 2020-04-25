@@ -131,7 +131,7 @@ public class ThresholdView{
         paneltext.setBackground(Color.BLACK);
 
         model = new DefaultTableModel(data,head);
-        tableProduct = new JTable(data, head);
+        tableProduct = new JTable(model);
         tableProduct.setBackground(Color.GRAY);
 
         header = tableProduct.getTableHeader();
