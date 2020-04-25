@@ -50,7 +50,7 @@ public class AddProductController {
     public void goThresh(){
         view.window.setVisible(false);
         ThresholdView newView = (ThresholdView) context.get("threshold");
-        newView.inti();
+        newView.init();
         newView.window.setVisible(true);
     }
 
