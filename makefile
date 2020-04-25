@@ -31,3 +31,6 @@ SAVESPATH = saves
 all:
 	#-sourcepath $(FILESPATH) -classpath $(CPATH) -d $(CPATH)
 	$(JC) $(JFLAGS) $(FILES)
+
+clear:
+	rm $(CLASSFILES)
