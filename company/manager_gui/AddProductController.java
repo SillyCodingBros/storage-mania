@@ -38,6 +38,9 @@ public class AddProductController {
         if(model.addProduct(newProduct) == false){
             view.printCantAdd();
         }
+        else{
+          goStock();
+        }
     }
 
     public void goStock(){
