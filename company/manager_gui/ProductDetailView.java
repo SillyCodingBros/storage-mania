@@ -17,16 +17,12 @@ public class ProductDetailView {
     private JButton buttonProvider;
     private JButton buttonAddProvider;
     private JButton buttonRemoveProduct;
-    private JButton buttonDetailProduct;
-    private JButton buttonThreshold;
-    private JButton buttonConfirm;
-    private JTextField fieldBarcode;
+    private JButton buttonEdit;
     private JPanel panelRight;
     private JPanel panelBottom;
     private JPanel panelCenter;
     private JLabel title;
     private JPanel paneltext;
-    private JLabel barcode;
     private JPanel panelConfirm;
     private JTable tableProduct;
     private JTableHeader header;
@@ -103,50 +99,17 @@ public class ProductDetailView {
 		buttonRemoveProduct.setFont(myFont);
         buttonRemoveProduct.setBackground(new Color(34,34,34));
         buttonRemoveProduct.setBorder(BorderFactory.createBevelBorder(0));
-        buttonRemoveProduct.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                controller.goRemoveProduct();
-            }
-        });
 
-		buttonDetailProduct = new JButton("Detail Product");
-		buttonDetailProduct.setToolTipText("Button for view the product detail");
-		buttonDetailProduct.setPreferredSize(new Dimension(280, 100));
-        buttonDetailProduct.setForeground(new Color(255,153,0));
-        buttonDetailProduct.setFont(myFont);
-        buttonDetailProduct.setBackground(new Color(34,34,34));
-        buttonDetailProduct.setBorder(BorderFactory.createBevelBorder(0));
-        buttonDetailProduct.setEnabled(false);
-
-		buttonThreshold = new JButton("Threshold");
-		buttonThreshold.setToolTipText("Button for view the product below threshold");
-		buttonThreshold.setPreferredSize(new Dimension(280, 100));
-        buttonThreshold.setForeground(new Color(255,153,0));
-		buttonThreshold.setFont(myFont);
-        buttonThreshold.setBackground(new Color(34,34,34));
-        buttonThreshold.setBorder(BorderFactory.createBevelBorder(0));
-        buttonThreshold.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                controller.goThresh();
-            }
-        });
+		buttonEdit = new JButton("Edit Product");
+		buttonEdit.setToolTipText("Button for edit a product");
+		buttonEdit.setPreferredSize(new Dimension(280, 100));
+        buttonEdit.setForeground(new Color(255,153,0));
+		buttonEdit.setFont(myFont);
+        buttonEdit.setBackground(new Color(34,34,34));
+        buttonEdit.setBorder(BorderFactory.createBevelBorder(0));
 
 		//buttons left panel
-		buttonConfirm= new JButton("Confirm");
-		buttonConfirm.setToolTipText("Button for Remove a Product");
-		buttonConfirm.setPreferredSize(new Dimension(280, 50));
-        buttonConfirm.setForeground(new Color(255,153,0));
-		buttonConfirm.setFont(myFont);
-        buttonConfirm.setBackground(new Color(34,34,34));
-        buttonConfirm.setBorder(BorderFactory.createBevelBorder(0));
 
-
-		//field
-        fieldBarcode = new JTextField();
-        fieldBarcode.setColumns(15);
-        fieldBarcode.setFont(myFont);
 
         //tableProduct
         String[] head = {"Name Product", "Quantity", "Threshold", "Price", "Barcode"};
@@ -159,8 +122,7 @@ public class ProductDetailView {
 		panelRight.setPreferredSize(new Dimension(290, 110));
         panelRight.setBackground(Color.BLACK);
 
-		panelRight.add(buttonDetailProduct);
-		panelRight.add(buttonThreshold);
+		panelRight.add(buttonEdit);
         panelRight.add(buttonRemoveProduct);
 
         window.add(panelRight, BorderLayout.EAST);
@@ -198,12 +160,6 @@ public class ProductDetailView {
         paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS));
         paneltext.setBackground(Color.BLACK);
 
-
-        barcode = new JLabel("Barcode");
-		barcode.setFont(myFont);
-        barcode.setForeground(new Color(255,153,0));
-        paneltext.add(barcode);
-
         tableProduct = new JTable(data, head);
         tableProduct.setBackground(Color.GRAY);
 
@@ -215,15 +171,6 @@ public class ProductDetailView {
         tableProduct.setRowHeight(30);
 		paneltext.add(new JScrollPane(tableProduct), BorderLayout.CENTER);
 
-
-		panelConfirm = new JPanel();
-        panelConfirm.add(barcode);
-		panelConfirm.add(fieldBarcode);
-        panelConfirm.add(buttonConfirm);
-        panelConfirm.setBackground(Color.BLACK);
-        panelConfirm.add(paneltext, BorderLayout.CENTER);
-
-        panelCenter.add(panelConfirm, BorderLayout.NORTH);
 		panelCenter.add(paneltext, BorderLayout.WEST);
 
         //windows setting
