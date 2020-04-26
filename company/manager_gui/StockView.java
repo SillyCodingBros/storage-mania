@@ -20,7 +20,10 @@ public class StockView {
     private JButton buttonStock;
     private JButton buttonProvider;
     private JButton buttonAddProvider;
+    private JButton buttonImpress;
     private JButton buttonThreshold;
+    private JButton buttonOrder;
+    private JButton buttonNewOrder;
     private JPanel panelRight;
     private JPanel panelBottom;
     private JPanel panelCenter;
@@ -45,7 +48,7 @@ public class StockView {
         //buttons bottom panel
         buttonAddProduct = new JButton("Add Product");
         buttonAddProduct.setToolTipText("A button for add a product");
-        buttonAddProduct.setPreferredSize(new Dimension(260, 100));
+        buttonAddProduct.setPreferredSize(new Dimension(280, 100));
         buttonAddProduct.setForeground(new Color(255,153,0));
         buttonAddProduct.setFont(myFont);
         buttonAddProduct.setBackground(new Color(34,34,34));
@@ -101,6 +104,16 @@ public class StockView {
             }
         });
 
+        buttonImpress = new JButton("Impress");
+        //buttonImpress.setToolTipText("A button for add a product");
+		buttonImpress.setPreferredSize(new Dimension(280, 100));
+        buttonImpress.setForeground(new Color(255,153,0));
+        buttonImpress.setFont(myFont);
+        buttonImpress.setBackground(new Color(34,34,34));
+        buttonImpress.setBorder(BorderFactory.createBevelBorder(0));
+        buttonImpress.setEnabled(false);
+
+
 		buttonThreshold = new JButton("Threshold");
 		buttonThreshold.setToolTipText("Button for view the product below threshold");
 		buttonThreshold.setPreferredSize(new Dimension(280, 100));
@@ -115,6 +128,24 @@ public class StockView {
             }
         });
 
+        buttonOrder = new JButton("Order");
+        //buttonOrder.setToolTipText("A button for add a product");
+		buttonOrder.setPreferredSize(new Dimension(280, 100));
+        buttonOrder.setForeground(new Color(255,153,0));
+        buttonOrder.setFont(myFont);
+        buttonOrder.setBackground(new Color(34,34,34));
+        buttonOrder.setBorder(BorderFactory.createBevelBorder(0));
+        buttonOrder.setEnabled(false);
+
+        buttonNewOrder = new JButton("New Order");
+        //buttonNewOrder.setToolTipText("A button for add a product");
+		buttonNewOrder.setPreferredSize(new Dimension(280, 100));
+        buttonNewOrder.setForeground(new Color(255,153,0));
+        buttonNewOrder.setFont(myFont);
+        buttonNewOrder.setBackground(new Color(34,34,34));
+        buttonNewOrder.setBorder(BorderFactory.createBevelBorder(0));
+        buttonNewOrder.setEnabled(false);
+
 
         //tableProduct
         String[] head = {"Name Product", "Quantity", "Threshold", "Price", "Barcode"};
@@ -127,7 +158,10 @@ public class StockView {
         panelRight.setPreferredSize(new Dimension(290, 110));
         panelRight.setBackground(Color.BLACK);
 
-		panelRight.add(buttonThreshold);
+        panelRight.add(buttonImpress);
+        panelRight.add(buttonThreshold);
+        panelRight.add(buttonOrder);
+        panelRight.add(buttonNewOrder);
 
         window.add(panelRight, BorderLayout.EAST);
 
