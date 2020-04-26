@@ -74,6 +74,7 @@ public class AddProductView{
         buttonProvider.setFont(myFont);
         buttonProvider.setBackground(new Color(34,34,34));
         buttonProvider.setBorder(BorderFactory.createBevelBorder(0));
+        buttonProvider.setEnabled(false);
         buttonProvider.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -88,6 +89,7 @@ public class AddProductView{
         buttonAddProvider.setFont(myFont);
         buttonAddProvider.setBackground(new Color(34,34,34));
         buttonAddProvider.setBorder(BorderFactory.createBevelBorder(0));
+        buttonAddProvider.setEnabled(false);
         buttonAddProvider.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
