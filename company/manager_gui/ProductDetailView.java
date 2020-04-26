@@ -160,7 +160,7 @@ public class ProductDetailView {
         fieldProvider = new JTextField();
 		fieldProvider.setFont(myFont);
         fieldProvider.setPreferredSize(new Dimension(200, 20));
-        fieldProvider.setText("Not configure");
+        fieldProvider.setText("Not configured");
         fieldProvider.addKeyListener(new KeyAdapter() {
             public void keyTyped (KeyEvent e) {
                 e.consume() ;
@@ -171,7 +171,7 @@ public class ProductDetailView {
         fieldInbound = new JTextField();
 		fieldInbound.setFont(myFont);
         fieldInbound.setPreferredSize(new Dimension(200, 20));
-        fieldInbound.setText("Not configure");
+        fieldInbound.setText("0");
         fieldInbound.addKeyListener(new KeyAdapter() {
             public void keyTyped (KeyEvent e) {
                 e.consume() ;
@@ -389,5 +389,6 @@ public class ProductDetailView {
         fieldThreshold.setText(threshold.toString());
         fieldBarcode.setText(barcode.toString());
         fieldPrice.setText(price.toString());
+        fieldInbound.setText(inbound.toString();
     }
 }
