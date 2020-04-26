@@ -7,6 +7,7 @@ import javax.swing.border.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.*;
+import javax.swing.plaf.metal.MetalButtonUI;
 
 public class StockView {
     public JPanel window;
@@ -64,6 +65,11 @@ public class StockView {
         buttonStock.setBackground(new Color(34,34,34));
         buttonStock.setBorder(BorderFactory.createBevelBorder(0));
         buttonStock.setEnabled(false);
+        buttonStock.setUI(new MetalButtonUI() {
+            protected Color getDisabledTextColor() {
+                return new Color(128, 77, 0);
+            }
+        });
 
         buttonProvider = new JButton("Provider");
 		buttonProvider.setToolTipText("Button for view the list of Provider");
@@ -166,8 +172,8 @@ public class StockView {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 // TODO Auto-generated method stub
-                if (!e.getValueIsAdjusting() && tableProduct.getSelectedRow() != -1) 
-                    System.out.println(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString());    
+                if (!e.getValueIsAdjusting() && tableProduct.getSelectedRow() != -1)
+                    System.out.println(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString());
             }
         });
 
