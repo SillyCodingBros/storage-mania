@@ -43,10 +43,11 @@ public class StockController {
         System.out.println("In an ideal world, program would switch to AddProvider MVC...\n");
     }
 
-    public void goDetailProduct(){
+    public void goDetailProduct(Integer barcode){
         //view.window.setVisible(false);
         ProductDetailView newView = (ProductDetailView) context.get("productDetail");
         //newView.window.setVisible(true);
+        newView.init(barcode);
         view.main_window.setContentPane(newView.window);
         view.main_window.repaint();
         view.main_window.revalidate();

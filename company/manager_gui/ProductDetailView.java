@@ -317,6 +317,10 @@ public class ProductDetailView {
     public void setController(ProductDetailController controller){
         this.controller = controller;
     }
+
+    public void init(Integer barcode){
+        controller.loadProduct(barcode);
+    }
     /*public void promptBarCode(){
         System.out.print("Input product barcode :\n\t> ");
     }
@@ -336,4 +340,11 @@ public class ProductDetailView {
     public void printHeader(){
         System.out.println("Name   Qty Owned(inb.)/lim.\tBarcode\t\tPrice");
     }*/
+    public void addData(String name, Integer qty, Integer inbound, Integer threshold, Integer barcode, Float price){
+        fieldNameProduct.setText(name);
+        fieldQuantity.setText(qty.toString());
+        fieldThreshold.setText(threshold.toString());
+        fieldBarcode.setText(barcode.toString());
+        fieldPrice.setText(price.toString());
+    }
 }

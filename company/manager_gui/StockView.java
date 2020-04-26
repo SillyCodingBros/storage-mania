@@ -165,7 +165,7 @@ public class StockView {
             public void valueChanged(ListSelectionEvent e) {
                 // TODO Auto-generated method stub
                 if (!e.getValueIsAdjusting() && tableProduct.getSelectedRow() != -1) 
-                    System.out.println(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString());    
+                    controller.goDetailProduct(Integer.parseInt(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString()));   
             }
         });
 

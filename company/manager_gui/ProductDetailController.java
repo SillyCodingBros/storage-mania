@@ -2,6 +2,8 @@ package company.manager_gui;
 
 import java.util.Scanner;
 import java.util.HashMap;
+import company.data.Stock;
+import company.data.StockProduct;
 
 public class ProductDetailController{
 
@@ -72,5 +74,12 @@ public class ProductDetailController{
         view.main_window.setContentPane(newView.window);
         view.main_window.repaint();
         view.main_window.revalidate();
+    }
+
+    public void loadProduct(Integer barcode){
+        StockProduct product = model.findProduct(barcode);
+        if(product != null){
+            view.addData(product.name, product.quantity, product.inbound, product.threshold, product.barcode, product.price);
+        }
     }
 }
