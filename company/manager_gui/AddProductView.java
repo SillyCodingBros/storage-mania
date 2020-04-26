@@ -133,10 +133,11 @@ public class AddProductView{
 		fieldProvider.setFont(myFont);
         fieldProvider.setPreferredSize(new Dimension(200, 20));
         fieldProvider.setText("Not configure");
+        fieldProvider.setEnabled(false);
         fieldProvider.addKeyListener(new KeyAdapter() {
             public void keyTyped (KeyEvent e) {
                 e.consume() ;
-                
+
             }
          });
 
@@ -147,7 +148,7 @@ public class AddProductView{
         fieldInbound.addKeyListener(new KeyAdapter() {
             public void keyTyped (KeyEvent e) {
                 e.consume() ;
-                
+
             }
          });
 
@@ -263,14 +264,14 @@ public class AddProductView{
 		paneltext.add(quantity);
 
         paneltext.add(fieldQuantity);
-        
+
         provider = new JLabel("Provider");
 		provider.setFont(myFont);
         provider.setForeground(new Color(255,153,0));
 		paneltext.add(provider);
 
         paneltext.add(fieldProvider);
-        
+
         inbound = new JLabel("Inbound");
 		inbound.setFont(myFont);
         inbound.setForeground(new Color(255,153,0));

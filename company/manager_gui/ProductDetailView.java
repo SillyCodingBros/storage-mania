@@ -174,6 +174,7 @@ public class ProductDetailView {
 		fieldProvider.setFont(myFont);
         fieldProvider.setPreferredSize(new Dimension(200, 20));
         fieldProvider.setText("Not configured");
+        fieldProvider.setEnabled(false);
         fieldProvider.addKeyListener(new KeyAdapter() {
             public void keyTyped (KeyEvent e) {
                 e.consume() ;
@@ -185,6 +186,7 @@ public class ProductDetailView {
 		fieldInbound.setFont(myFont);
         fieldInbound.setPreferredSize(new Dimension(200, 20));
         fieldInbound.setText("0");
+        fieldInbound.setEditable(false);
         fieldInbound.addKeyListener(new KeyAdapter() {
             public void keyTyped (KeyEvent e) {
                 e.consume() ;
@@ -223,18 +225,7 @@ public class ProductDetailView {
          });
         fieldBarcode = new JTextField();
         fieldBarcode.setFont(myFont);
-        fieldBarcode.addKeyListener(new KeyAdapter() {
-            public void keyTyped (KeyEvent e) {
-                char c = e.getKeyChar() ;
-
-                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE)
-                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB)
-                    ||  (Character.isDigit(c))))
-                {
-                e.consume() ;
-                }
-            }
-         });
+        fieldBarcode.setEditable(false);
 
 		//buttons left panel
 		buttonConfirm= new JButton("Confirm");
