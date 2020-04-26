@@ -1,0 +1,46 @@
+.
+├── company
+    ├── cashier
+    │   ├── Cashier.java
+    │   ├── SalesOrder.java
+    │   └── Session.java
+    ├── data
+    │   ├── CheckoutProduct.java
+    │   ├── Product.java
+    │   ├── PurchaseOrder.java
+    │   ├── Stock.java
+    │   ├── StockProduct.java
+    │   ├── Supplier.java
+    │   └── Suppliers.java
+    ├── manager
+    │   ├── AddProductController.java
+    │   ├── AddProductModel.java
+    │   ├── AddProductView.java
+    │   ├── ProductDetailController.java
+    │   ├── ProductDetailModel.java
+    │   ├── ProductDetailView.java
+    │   ├── RemoveProductController.java
+    │   ├── RemoveProductModel.java
+    │   ├── RemoveProductView.java
+    │   ├── StockController.java
+    │   ├── StockModel.java
+    │   ├── StockView.java
+    │   ├── ThresholdController.java
+    │   ├── ThresholdModel.java
+    │   └── ThresholdView.java
+    ├── manager_gui
+    │   ├── AddProductController.java
+    │   ├── AddProductModel.java
+    │   ├── AddProductView.java
+    │   ├── ProductDetailController.java
+    │   ├── ProductDetailModel.java
+    │   ├── ProductDetailView.java
+    │   ├── StockController.java
+    │   ├── StockModel.java
+    │   ├── StockView.java
+    │   ├── ThresholdController.java
+    │   ├── ThresholdModel.java
+    │   └── ThresholdView.java
+    └── serial
+        ├── DeserializeStock.java
+        └── SerializeStock.java
