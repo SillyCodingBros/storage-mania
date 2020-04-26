@@ -265,7 +265,7 @@ public class AddProductView{
 
         paneltext.add(fieldProvider);
         
-        inbound = new JLabel("Provider");
+        inbound = new JLabel("Inbound");
 		inbound.setFont(myFont);
         inbound.setForeground(new Color(255,153,0));
 		paneltext.add(inbound);
