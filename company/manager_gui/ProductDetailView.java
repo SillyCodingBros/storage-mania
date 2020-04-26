@@ -257,6 +257,19 @@ public class ProductDetailView {
         buttonConfirm.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
+                panelConfirm.setVisible(false);
+                buttonEdit.setEnabled(true);
+                buttonEdit.setUI(new MetalButtonUI() {
+                    protected Color getDisabledTextColor() {
+                        return new Color(255,153,0);
+                    }
+                });
+
+            }
+        });
+        buttonConfirm.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
                 String name = fieldNameProduct.getText();
                 Integer barcode = Integer.parseInt(fieldBarcode.getText());
                 Float price = Float.parseFloat(fieldPrice.getText());
