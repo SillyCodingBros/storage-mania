@@ -19,14 +19,23 @@ public class ProductDetailView {
     private JButton buttonAddProvider;
     private JButton buttonRemoveProduct;
     private JButton buttonEdit;
+    private JButton buttonConfirm;
+    public JTextField fieldNameProduct;
+    public JTextField fieldQuantity;
+    public JTextField fieldThreshold;
+    public JTextField fieldPrice;
+    public JTextField fieldBarcode;
     private JPanel panelRight;
     private JPanel panelBottom;
     private JPanel panelCenter;
     private JLabel title;
     private JPanel paneltext;
+    private JLabel nameProduct;
+    private JLabel quantity;
+    private JLabel threshold;
+    private JLabel price;
+    private JLabel barcode;
     private JPanel panelConfirm;
-    private JTable tableProduct;
-    private JTableHeader header;
 
 
     public ProductDetailView(JFrame main_win){
@@ -111,13 +120,98 @@ public class ProductDetailView {
 		buttonEdit.setFont(myFont);
         buttonEdit.setBackground(new Color(34,34,34));
         buttonEdit.setBorder(BorderFactory.createBevelBorder(0));
+        buttonEdit.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                panelConfirm.setVisible(true); 
+                buttonEdit.setEnabled(false);
+
+            }
+        });
+
+        //field
+		fieldNameProduct = new JTextField();
+		fieldNameProduct.setFont(myFont);
+		fieldNameProduct.setPreferredSize(new Dimension(200, 20));
+
+
+		fieldQuantity = new JTextField();
+		fieldQuantity.setFont(myFont);
+        fieldQuantity.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) {
+                char c = e.getKeyChar() ;
+
+                if (!   ((c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE)
+                    ||  (c == KeyEvent.VK_ENTER)      || (c == KeyEvent.VK_TAB)
+                    ||  (Character.isDigit(c))))
+                {
+                e.consume() ;
+                }
+            }
+         });
+
+		fieldThreshold = new JTextField();
+		fieldThreshold.setFont(myFont);
+        fieldThreshold.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) {
+                char c = e.getKeyChar() ;
+
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE)
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB)
+                    ||  (Character.isDigit(c))))
+                {
+                e.consume() ;
+                }
+            }
+         });
+
+		fieldPrice = new JTextField();
+        fieldPrice.setFont(myFont);
+        fieldPrice.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) {
+                char c = e.getKeyChar() ;
+
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE)
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB)
+                    ||  (c == KeyEvent.VK_PERIOD)       ||  (Character.isDigit(c))))
+                {
+                e.consume() ;
+                }
+            }
+         });
+        fieldBarcode = new JTextField();
+        fieldBarcode.setFont(myFont);
+        fieldBarcode.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) {
+                char c = e.getKeyChar() ;
+
+                if (!   ((c == KeyEvent.VK_BACK_SPACE)  || (c == KeyEvent.VK_DELETE)
+                    ||  (c == KeyEvent.VK_ENTER)        || (c == KeyEvent.VK_TAB)
+                    ||  (Character.isDigit(c))))
+                {
+                e.consume() ;
+                }
+            }
+         });
 
 		//buttons left panel
-
-
-        //tableProduct
-        String[] head = {"Name Product", "Quantity", "Threshold", "Price", "Barcode"};
-        Object[][] data = {{"1","2","3","4","5"}};
+		buttonConfirm= new JButton("Confirm");
+		buttonConfirm.setToolTipText("Button for Remove a Product");
+		buttonConfirm.setPreferredSize(new Dimension(280, 50));
+        buttonConfirm.setForeground(new Color(255,153,0));
+		buttonConfirm.setFont(myFont);
+        buttonConfirm.setBackground(new Color(34,34,34));
+        buttonConfirm.setBorder(BorderFactory.createBevelBorder(0));
+        buttonConfirm.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                fieldNameProduct.setText("");
+                fieldBarcode.setText("");
+                fieldPrice.setText("");
+                fieldQuantity.setText("");
+                fieldThreshold.setText("");
+            }
+        }); 
 
 
         //panel right
@@ -159,23 +253,58 @@ public class ProductDetailView {
 		window.add(panelCenter, BorderLayout.CENTER );
 
         //panel in panel center
+		
+		//panel in panel center
 		paneltext = new JPanel();
 		paneltext.setBorder(new EtchedBorder());
-        paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS));
+		paneltext.setLayout(new BoxLayout(paneltext, BoxLayout.Y_AXIS));
         paneltext.setBackground(Color.BLACK);
 
-        tableProduct = new JTable(data, head);
-        tableProduct.setBackground(Color.GRAY);
 
-        header = tableProduct.getTableHeader();
-        header.setFont(Fonttable);
-        header.setBackground(new Color(34,34,34));
-        header.setForeground(new Color(255,153,0));
-        tableProduct.setFont(Fonttable);
-        tableProduct.setRowHeight(30);
-		paneltext.add(new JScrollPane(tableProduct), BorderLayout.CENTER);
+		nameProduct = new JLabel("Name Product");
+		nameProduct.setFont(myFont);
+        nameProduct.setForeground(new Color(255,153,0));
+		paneltext.add(nameProduct);
+
+		paneltext.add(fieldNameProduct);
+		paneltext.setFont(myFont);
+
+		quantity = new JLabel("Quantity");
+		quantity.setFont(myFont);
+        quantity.setForeground(new Color(255,153,0));
+		paneltext.add(quantity);
+
+		paneltext.add(fieldQuantity);
+
+		threshold = new JLabel("Threshold");
+		threshold.setFont(myFont);
+        threshold.setForeground(new Color(255,153,0));
+		paneltext.add(threshold);
+
+		paneltext.add(fieldThreshold);
+
+		price = new JLabel("Price");
+		price.setFont(myFont);
+        price.setForeground(new Color(255,153,0));
+		paneltext.add(price);
+
+        paneltext.add(fieldPrice);
+
+        barcode = new JLabel("Barcode");
+		barcode.setFont(myFont);
+        barcode.setForeground(new Color(255,153,0));
+		paneltext.add(barcode);
+
+		paneltext.add(fieldBarcode);
+
+		panelConfirm = new JPanel();
+        panelConfirm.setBackground(Color.BLACK);
+        panelConfirm.add(buttonConfirm);
+        panelConfirm.setVisible(false);
+
 
 		panelCenter.add(paneltext, BorderLayout.WEST);
+		panelCenter.add(panelConfirm, BorderLayout.SOUTH);
 
         //windows setting
         //window.setTitle("Storage Mania");
