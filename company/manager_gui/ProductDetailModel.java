@@ -43,4 +43,16 @@ public class ProductDetailModel {
         }
         return false;
     }
+
+    public void setProduct(StockProduct updated, Integer barcode){
+        StockProduct toChange = findProduct(barcode);
+        if(toChange != null){
+            toChange.name = updated.name;
+            toChange.price = updated.price;
+            toChange.quantity = updated.quantity;
+            toChange.threshold = updated.threshold;
+            toChange.inbound = updated.inbound;
+            SerializeStock.main(stock);
+        }
+    }
 }
