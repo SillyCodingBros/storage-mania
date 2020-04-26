@@ -49,7 +49,7 @@ public class AddProductView{
         //buttons bottom panel
         buttonAddProduct = new JButton("Add Product");
         buttonAddProduct.setToolTipText("A button for add a product");
-		buttonAddProduct.setPreferredSize(new Dimension(260, 100));
+		buttonAddProduct.setPreferredSize(new Dimension(280, 100));
         buttonAddProduct.setForeground(new Color(255,153,0));
         buttonAddProduct.setFont(myFont);
         buttonAddProduct.setBackground(new Color(34,34,34));

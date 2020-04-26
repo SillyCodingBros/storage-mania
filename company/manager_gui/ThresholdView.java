@@ -46,7 +46,7 @@ public class ThresholdView{
         //buttons bottom panel
         buttonAddProduct = new JButton("Add Product");
         buttonAddProduct.setToolTipText("A button for add a product");
-		buttonAddProduct.setPreferredSize(new Dimension(260, 100));
+		buttonAddProduct.setPreferredSize(new Dimension(280, 100));
         buttonAddProduct.setForeground(new Color(255,153,0));
         buttonAddProduct.setFont(myFont);
         buttonAddProduct.setBackground(new Color(34,34,34));
@@ -104,7 +104,7 @@ public class ThresholdView{
 
         buttonImpress = new JButton("Impress");
         //buttonImpress.setToolTipText("A button for add a product");
-		buttonImpress.setPreferredSize(new Dimension(260, 100));
+		buttonImpress.setPreferredSize(new Dimension(280, 100));
         buttonImpress.setForeground(new Color(255,153,0));
         buttonImpress.setFont(myFont);
         buttonImpress.setBackground(new Color(34,34,34));
@@ -114,7 +114,7 @@ public class ThresholdView{
 
         buttonOrder = new JButton("Order");
         //buttonOrder.setToolTipText("A button for add a product");
-		buttonOrder.setPreferredSize(new Dimension(260, 100));
+		buttonOrder.setPreferredSize(new Dimension(280, 100));
         buttonOrder.setForeground(new Color(255,153,0));
         buttonOrder.setFont(myFont);
         buttonOrder.setBackground(new Color(34,34,34));
@@ -123,7 +123,7 @@ public class ThresholdView{
 
         buttonNewOrder = new JButton("New Order");
         //buttonNewOrder.setToolTipText("A button for add a product");
-		buttonNewOrder.setPreferredSize(new Dimension(260, 100));
+		buttonNewOrder.setPreferredSize(new Dimension(280, 100));
         buttonNewOrder.setForeground(new Color(255,153,0));
         buttonNewOrder.setFont(myFont);
         buttonNewOrder.setBackground(new Color(34,34,34));
