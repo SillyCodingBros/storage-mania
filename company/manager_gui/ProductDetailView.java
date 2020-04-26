@@ -22,6 +22,8 @@ public class ProductDetailView {
     private JButton buttonRemoveProduct;
     private JButton buttonEdit;
     private JButton buttonConfirm;
+    private JButton buttonImpress;
+    private JButton buttonOrder;
     public JTextField fieldNameProduct;
     public JTextField fieldQuantity;
     private JTextField fieldProvider;
@@ -57,7 +59,7 @@ public class ProductDetailView {
         //buttons bottom panel
         buttonAddProduct = new JButton("Add Product");
         buttonAddProduct.setToolTipText("A button for add a product");
-		buttonAddProduct.setPreferredSize(new Dimension(260, 100));
+		buttonAddProduct.setPreferredSize(new Dimension(280, 100));
         buttonAddProduct.setForeground(new Color(255,153,0));
         buttonAddProduct.setFont(myFont);
         buttonAddProduct.setBackground(new Color(34,34,34));
@@ -112,6 +114,14 @@ public class ProductDetailView {
                 controller.goAddProvider();
             }
         });
+        buttonImpress = new JButton("Impress");
+        //buttonImpress.setToolTipText("A button for add a product");
+		buttonImpress.setPreferredSize(new Dimension(280, 100));
+        buttonImpress.setForeground(new Color(255,153,0));
+        buttonImpress.setFont(myFont);
+        buttonImpress.setBackground(new Color(34,34,34));
+        buttonImpress.setBorder(BorderFactory.createBevelBorder(0));
+        buttonImpress.setEnabled(false);
 
         buttonRemoveProduct = new JButton("Remove Product");
 		buttonRemoveProduct.setToolTipText("Button for Remove a Product");
@@ -147,6 +157,15 @@ public class ProductDetailView {
 
             }
         });
+
+        buttonOrder = new JButton("Order");
+        //buttonOrder.setToolTipText("A button for add a product");
+		buttonOrder.setPreferredSize(new Dimension(280, 100));
+        buttonOrder.setForeground(new Color(255,153,0));
+        buttonOrder.setFont(myFont);
+        buttonOrder.setBackground(new Color(34,34,34));
+        buttonOrder.setBorder(BorderFactory.createBevelBorder(0));
+        buttonOrder.setEnabled(false);
 
         //field
 		fieldNameProduct = new JTextField();
@@ -253,8 +272,10 @@ public class ProductDetailView {
 		panelRight.setPreferredSize(new Dimension(290, 110));
         panelRight.setBackground(Color.BLACK);
 
+        panelRight.add(buttonImpress);
 		panelRight.add(buttonEdit);
         panelRight.add(buttonRemoveProduct);
+        panelRight.add(buttonOrder);
 
         window.add(panelRight, BorderLayout.EAST);
 
