@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
+import javax.swing.plaf.metal.MetalButtonUI;
 
 public class AddProductView{
     private AddProductController controller;
@@ -56,6 +57,11 @@ public class AddProductView{
         buttonAddProduct.setBackground(new Color(34,34,34));
         buttonAddProduct.setBorder(BorderFactory.createBevelBorder(0));
         buttonAddProduct.setEnabled(false);
+        buttonAddProduct.setUI(new MetalButtonUI() {
+            protected Color getDisabledTextColor() {
+                return new Color(128, 77, 0);
+            }
+        });
 
         buttonStock = new JButton("Stock");
 		buttonStock.setToolTipText("Button for view the stock");

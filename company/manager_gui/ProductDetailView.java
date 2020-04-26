@@ -5,6 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.table.*;
+import javax.swing.plaf.metal.MetalButtonUI;
 
 
 public class ProductDetailView {
@@ -136,8 +137,13 @@ public class ProductDetailView {
         buttonEdit.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                panelConfirm.setVisible(true); 
+                panelConfirm.setVisible(true);
                 buttonEdit.setEnabled(false);
+                buttonEdit.setUI(new MetalButtonUI() {
+                    protected Color getDisabledTextColor() {
+                        return new Color(128, 77, 0);
+                    }
+                });
 
             }
         });
@@ -171,7 +177,7 @@ public class ProductDetailView {
         fieldProvider.addKeyListener(new KeyAdapter() {
             public void keyTyped (KeyEvent e) {
                 e.consume() ;
-                
+
             }
          });
 
@@ -182,7 +188,7 @@ public class ProductDetailView {
         fieldInbound.addKeyListener(new KeyAdapter() {
             public void keyTyped (KeyEvent e) {
                 e.consume() ;
-                
+
             }
          });
 
@@ -247,7 +253,7 @@ public class ProductDetailView {
                 fieldQuantity.setText("");
                 fieldThreshold.setText("");
             }
-        }); 
+        });
 
 
         //panel right
@@ -289,7 +295,7 @@ public class ProductDetailView {
 		window.add(panelCenter, BorderLayout.CENTER );
 
         //panel in panel center
-		
+
 		//panel in panel center
 		paneltext = new JPanel();
 		paneltext.setBorder(new EtchedBorder());
@@ -311,14 +317,14 @@ public class ProductDetailView {
 		paneltext.add(quantity);
 
         paneltext.add(fieldQuantity);
-        
+
         provider = new JLabel("Provider");
 		provider.setFont(myFont);
         provider.setForeground(new Color(255,153,0));
         paneltext.add(provider);
 
         paneltext.add(fieldProvider);
-        
+
         inbound = new JLabel("Inbound");
 		inbound.setFont(myFont);
         inbound.setForeground(new Color(255,153,0));
