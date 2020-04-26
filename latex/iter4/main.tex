@@ -349,6 +349,9 @@
                     \item //impression du bon de commande apres validation
     	        \end{itemize}
 	    \end{itemize}
+	    
+	   \section{Persistance des données}
+	   La persistance des données est implémentée à l'aide d'une sérialisation de la classe Stock. La sérialisation est mise à jour à chaque modification du stock afin de palier à une interruption du programme inatendue. Elle est chargée ou crée si elle n'existe pas lors du lancement du programme.
 	   \section{Screenshots - MVC avec Interface Graphique}
 	   \centerline{\includegraphics[scale=0.30]{img/addProduct.png}}
 	   \begin{center}
