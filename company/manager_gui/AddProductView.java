@@ -18,6 +18,8 @@ public class AddProductView{
     private JButton buttonConfirm;
     public JTextField fieldNameProduct;
     public JTextField fieldQuantity;
+    private JTextField fieldProvider;
+    private JTextField fieldInbound;
     public JTextField fieldThreshold;
     public JTextField fieldPrice;
     public JTextField fieldBarcode;
@@ -28,6 +30,8 @@ public class AddProductView{
     private JPanel paneltext;
     private JLabel nameProduct;
     private JLabel quantity;
+    private JLabel provider;
+    private JLabel inbound;
     private JLabel threshold;
     private JLabel price;
     private JLabel barcode;
@@ -116,6 +120,28 @@ public class AddProductView{
                 {
                 e.consume() ;
                 }
+            }
+         });
+
+        fieldProvider = new JTextField();
+		fieldProvider.setFont(myFont);
+        fieldProvider.setPreferredSize(new Dimension(200, 20));
+        fieldProvider.setText("Not configure");
+        fieldProvider.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) {
+                e.consume() ;
+                
+            }
+         });
+
+        fieldInbound = new JTextField();
+		fieldInbound.setFont(myFont);
+        fieldInbound.setPreferredSize(new Dimension(200, 20));
+        fieldInbound.setText("Not configure");
+        fieldInbound.addKeyListener(new KeyAdapter() {
+            public void keyTyped (KeyEvent e) {
+                e.consume() ;
+                
             }
          });
 
@@ -230,7 +256,21 @@ public class AddProductView{
         quantity.setForeground(new Color(255,153,0));
 		paneltext.add(quantity);
 
-		paneltext.add(fieldQuantity);
+        paneltext.add(fieldQuantity);
+        
+        provider = new JLabel("Provider");
+		provider.setFont(myFont);
+        provider.setForeground(new Color(255,153,0));
+		paneltext.add(provider);
+
+        paneltext.add(fieldProvider);
+        
+        inbound = new JLabel("Provider");
+		inbound.setFont(myFont);
+        inbound.setForeground(new Color(255,153,0));
+		paneltext.add(inbound);
+
+		paneltext.add(fieldInbound);
 
 		threshold = new JLabel("Threshold");
 		threshold.setFont(myFont);
