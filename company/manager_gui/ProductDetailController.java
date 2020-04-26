@@ -87,4 +87,16 @@ public class ProductDetailController{
         model.removeProduct(barcode);
         goStock();
     }
+
+    public void updateProduct(String name, Integer barcode, Float price, Integer qty, Integer thresh, Integer inbound){
+        StockProduct updated = new StockProduct();
+        updated.name = name;
+        updated.barcode = barcode;
+        updated.price = price;
+        updated.quantity = qty;
+        updated.inbound = inbound;
+        updated.threshold = thresh;
+        model.setProduct(updated, barcode);
+        goStock();
+    }
 }

@@ -247,11 +247,13 @@ public class ProductDetailView {
         buttonConfirm.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                fieldNameProduct.setText("");
-                fieldBarcode.setText("");
-                fieldPrice.setText("");
-                fieldQuantity.setText("");
-                fieldThreshold.setText("");
+                String name = fieldNameProduct.getText();
+                Integer barcode = Integer.parseInt(fieldBarcode.getText());
+                Float price = Float.parseFloat(fieldPrice.getText());
+                Integer qty = Integer.parseInt(fieldQuantity.getText());
+                Integer thresh = Integer.parseInt(fieldThreshold.getText());
+                Integer inbound = Integer.parseInt(fieldInbound.getText());
+                controller.updateProduct(name, barcode, price, qty, thresh, inbound);
             }
         });
 
