@@ -389,6 +389,6 @@ public class ProductDetailView {
         fieldThreshold.setText(threshold.toString());
         fieldBarcode.setText(barcode.toString());
         fieldPrice.setText(price.toString());
-        fieldInbound.setText(inbound.toString();
+        fieldInbound.setText(inbound.toString());
     }
 }
