@@ -3,6 +3,8 @@ package company.manager_gui;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.border.*;
 import javax.swing.table.*;
 
@@ -137,6 +139,14 @@ public class ThresholdView{
         model = new DefaultTableModel(data,head);
         tableProduct = new JTable(model);
         tableProduct.setBackground(Color.GRAY);
+        tableProduct.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                // TODO Auto-generated method stub
+                if (!e.getValueIsAdjusting() && tableProduct.getSelectedRow() != -1) 
+                    System.out.println(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString()); 
+            }
+        });
 
         header = tableProduct.getTableHeader();
         header.setFont(Fonttable);

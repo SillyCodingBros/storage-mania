@@ -164,8 +164,8 @@ public class StockView {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 // TODO Auto-generated method stub
-                System.out.println(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString());
-                
+                if (!e.getValueIsAdjusting() && tableProduct.getSelectedRow() != -1) 
+                    System.out.println(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString());    
             }
         });
 
