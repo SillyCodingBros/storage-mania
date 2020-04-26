@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.table.*;
 
+
 public class ProductDetailView {
     private ProductDetailController controller;
     public JPanel window;
@@ -118,6 +119,12 @@ public class ProductDetailView {
 		buttonRemoveProduct.setFont(myFont);
         buttonRemoveProduct.setBackground(new Color(34,34,34));
         buttonRemoveProduct.setBorder(BorderFactory.createBevelBorder(0));
+        buttonRemoveProduct.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                controller.removeProduct(Integer.parseInt(fieldBarcode.getText()));
+            }
+        });
 
 		buttonEdit = new JButton("Edit Product");
 		buttonEdit.setToolTipText("Button for edit a product");

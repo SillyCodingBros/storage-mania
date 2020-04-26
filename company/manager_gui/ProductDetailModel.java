@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import company.data.Stock;
 import company.data.StockProduct;
+import company.serial.SerializeStock;
 
 public class ProductDetailModel {
 
@@ -33,5 +34,13 @@ public class ProductDetailModel {
         }else{
             return null;
         }
+    }
+
+    public boolean removeProduct(int barcode){
+        if (stock.removeProduct(barcode)) {
+          SerializeStock.main(stock);
+          return true;
+        }
+        return false;
     }
 }

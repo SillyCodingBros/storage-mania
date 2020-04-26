@@ -82,4 +82,9 @@ public class ProductDetailController{
             view.addData(product.name, product.quantity, product.inbound, product.threshold, product.barcode, product.price);
         }
     }
+
+    public void removeProduct(Integer barcode){
+        model.removeProduct(barcode);
+        goStock();
+    }
 }
