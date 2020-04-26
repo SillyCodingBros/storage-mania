@@ -24,14 +24,12 @@ public class ProductDetailModel {
         }
     }
 
-    public String findProduct(Integer barcode){
-        String ret;
+    public StockProduct findProduct(Integer barcode){
         StockProduct toFindProduct;
         toFindProduct = stock.getProductFromBarcode(barcode);
 
         if(toFindProduct != null){
-            ret = toFindProduct.toString();
-            return ret;
+            return toFindProduct;
         }else{
             return null;
         }

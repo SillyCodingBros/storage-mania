@@ -104,6 +104,14 @@ public class ThresholdView{
         String[] head = {"Name Product", "Quantity", "Threshold", "Price", "Barcode"};
         Object[][] data = {};
 
+        //panel right
+        panelRight = new JPanel();
+		panelRight.setBorder(new EtchedBorder());
+        panelRight.setPreferredSize(new Dimension(290, 110));
+        panelRight.setBackground(Color.BLACK);
+
+
+        window.add(panelRight, BorderLayout.EAST);
 
         //panel bottom
         panelBottom = new JPanel();
@@ -146,7 +154,7 @@ public class ThresholdView{
             public void valueChanged(ListSelectionEvent e) {
                 // TODO Auto-generated method stub
                 if (!e.getValueIsAdjusting() && tableProduct.getSelectedRow() != -1) 
-                    System.out.println(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString()); 
+                    controller.goDetailProduct(Integer.parseInt(tableProduct.getValueAt(tableProduct.getSelectedRow(), 4).toString()));   
             }
         });
 
