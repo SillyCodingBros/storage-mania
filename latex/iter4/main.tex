@@ -1,0 +1,377 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel} % If you write in French
+\usepackage{a4wide}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{subfig}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth
+\pgfkeys{/pgf/number format/.cd,
+	set decimal separator={,\!},
+	1000 sep={\,},
+}
+
+\usepackage{ifthen}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex]{hyperref}
+\else
+\usepackage{hyperref}
+\fi
+\usepackage{color}
+\hypersetup{%
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black}
+
+\renewcommand{\baselinestretch}{1.05}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[RE]{\bfseries\nouppercase{\leftmark}}
+\fancyhead[LO]{\bfseries\nouppercase{\rightmark}}
+\setlength{\headheight}{20pt}
+
+\let\headruleORIG\headrule
+\renewcommand{\headrule}{\color{black} \headruleORIG}
+\renewcommand{\headrulewidth}{1.0pt}
+\usepackage{colortbl}
+\arrayrulecolor{black}
+
+\fancypagestyle{plain}{
+	\fancyhead{}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+\makeatletter
+\def\@textbottom{\vskip \z@ \@plus 1pt}
+\let\@texttop\relax
+\makeatother
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else%
+	\hbox{}%
+	\thispagestyle{empty}%
+	\newpage
+	\if@twocolumn\hbox{}\fi\fi\newpage\fi}
+\makeatother
+
+\usepackage{amsthm}
+\usepackage{amssymb,amsmath,bbm}
+\usepackage{array}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage[footnote]{acronym}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+
+			\includegraphics[width=0.6\textwidth]{img/logop8-2}\\[1cm]
+
+			{\large Département informatique, Licence 3\up{ème} année}\\[0.5cm]
+
+			{\large Réalisation d'applications}\\[0.5cm]
+
+			% Title
+			\rule{\linewidth}{0.5mm} \\[0.4cm]
+			{ \huge \bfseries Itération 4: UML Gestion de stock \\[0.4cm] }
+			\rule{\linewidth}{0.5mm} \\[1.5cm]
+
+
+			% Author and supervisor
+			\noindent
+			\begin{minipage}{0.4\textwidth}
+				\begin{flushleft} \large
+					\emph{Auteurs :}\\
+					\textsc{COTREZ Leo}\\
+					\textsc{LEGOUEIX Nicolas}\\
+					 \textsc{QUERIC Yann}\\
+					 \textsc{ORNIACKI Thomas}\\
+
+				\end{flushleft}
+			\end{minipage}%
+			\begin{minipage}{0.4\textwidth}
+				\begin{flushright} \large
+					\emph{Enseignant :} \\
+					M \textsc{ P. Lefebvre}\\
+				\end{flushright}
+			\end{minipage}
+
+			\vfill
+
+			% Bottom of the page
+			{\large \today }
+
+		\end{center}
+	\end{titlepage}
+	\tableofcontents
+	\newpage
+	\section{Préliminaires}
+	    \subsection{Paquetage}
+	    	\includegraphics[width=0.9\textwidth]{img/classDiagram.png}
+	    \newpage
+	    \subsection{MVC}
+	    \includegraphics[width=0.9\textwidth]{img/page1.jpg}\\
+	    \subsubsection{Caisse}
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item aperçu des acticles scrollable
+        	        \item boutons
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+    	            \item pavé numerique: saisir le code produit
+                    \item 1 bouton total: 2 fonctionnalités
+								\begin{itemize}
+    		        \item 1 appui ouvre la caisse et imprime un ticket de transaction
+    		    		\item 2 appuis ouvre la caisse et imprime le ticket de l'ensemble des transactions depuis le dernier solde ainsi que le total
+								\end{itemize}
+                    \item 1 bouton entrée: valide la saisie du code produit
+                    \item 1 bouton retour: initie la procédure de retour en attente du code produit puis ouvre de la caisse pour le remboursement puis à la fermeture du tiroir, incrémente la quantité en stock
+                    \item 1 lecteur laser: scan le code barre de l'acticle
+                    \item Des boutons + et - dans la colonne quantité pour augmenter ou diminuer la quantité d'un produit
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page6.png}
+	    \subsubsection{Affichage des produits en stock}
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item affichage liste des produits en stock
+        	        \item boutons
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+                    \item 1 bouton impression des produits en stock (demande de confirmation)
+                    \item 1 bouton pour accéder aux articles sous leur seuil de rupture (passage au MVC liste des article sous le seuil)
+                    \item cliquer sur un produit pour accéder au détail (passage au MVC détail de produit)
+                    \item 1 bouton pour accéder aux commandes en cours (passage au MVC liste commande en cours)
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page8.png}
+	    \subsubsection{Détail d'un produit }
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item affichage liste des détails du produit (prix, fournisseur,...)
+        	        \item boutons
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+                    \item 1 bouton impression des détails d'un produit (demande de confirmation)
+                    \item 1 bouton édition des détails du produit (demande de confirmation)
+                    \item 1 bouton suppression d'un produit (demande de confirmation)
+                    \item 1 bouton de réapprovisionnement d'un produit (passage au MVC de demande de réapprovisionnement)
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page2.jpg}
+	    \subsubsection{Ajout d'un produit }
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item formulaire ajout de produit
+        	        \item boutons
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+                    \item 1 bouton valider ajout de produit
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page4}
+	    \subsubsection{Liste des fournisseurs }
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item liste des fournisseurs
+        	        \item barre de recherche
+        	        \item boutons cliquables
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+                    \item 1 barre de texte pour taper la recherche
+                    \item 1 bouton pour valider la recherche
+                    \item cliquer sur un fournisseur pour accéder au détail (passage au MVC détail fournisseur)
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page7.jpg}
+	    \subsubsection{Affichage les détails fournisseur }
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item affichage des détails fournisseur
+        	        \item bouton
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+                    \item 1 bouton impression des détails fournisseur(demande de confirmation)
+                    \item 1 bouton suppression fournisseur (passage au MVC détail de fournisseur)
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page3.jpg}
+	    \subsubsection{Ajout d'un fournisseur }
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item formulaire ajout de fournisseur
+        	        \item boutons
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page5.png}
+	    \subsubsection{Affichage des produits sous leur seuil }
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item affichage liste des produits sous leur seuil
+        	        \item boutons
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+                    \item 1 bouton impression des produits sous leurs seuil (demande de confirmation)
+                    \item cliquer sur un produit pour voir les détails (passage au MVC détail de produit)
+                    \item 1 bouton pour accéder aux commandes en cours (passage au MVC liste commande en cours)
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page9.png}
+	    \subsubsection{Affichage liste commande }
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item affichage liste des commandes
+        	        \item boutons
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+                    \item 1 bouton impression des produits de liste des commandes (demande de confirmation)
+    	        \end{itemize}
+	    \end{itemize}
+	    \includegraphics[width=0.9\textwidth]{img/page10.png}
+	    \subsubsection{Création d'une commande }
+	    \begin{itemize}
+	        \item Modèle
+    	        \begin{itemize}
+        	        \item formate les données pour la vue
+    	        \end{itemize}
+	        \item Vue
+	            \begin{itemize}
+        	        \item formulaire création de commande (avec choix du fournisseur, et quantité)
+        	        \item boutons
+    	        \end{itemize}
+	        \item Controlleur
+	            \begin{itemize}
+                    \item 1 bouton pour accéder à la liste des fournisseurs (passage au MVC liste fourniseur)
+                    \item 1 bouton pour accéder aux produits en stock (passage au MVC liste stock)
+                    \item 1 bouton ajouter article (passage au MVC ajouter un article)
+                    \item 1 bouton ajouter fournisseur (passage au MVC ajouter un fournisseur)
+                    \item 1 bouton de validation de la commande (demande de confirmation)
+                    \item //impression du bon de commande apres validation
+    	        \end{itemize}
+	    \end{itemize}
+	   \section{Screenshots - MVC avec Interface Graphique}
+	   \centerline{\includegraphics[scale=0.30]{img/addProduct.png}}
+	   \begin{center}
+	   Ajout d'un produit
+	   \end{center}
+	   \centerline{\includegraphics[scale=0.30]{img/DetailProduct.png}}
+	   \begin{center}
+	   Affichage du détail d'un produit en utilisant le code barre unique
+	   \end{center}
+	   \centerline{\includegraphics[scale=0.30]{img/threshold.png}}
+	   \begin{center}
+	   Affichage des produits sous le seuil de rupture
+	   \end{center}
+	   \centerline{\includegraphics[scale=0.30]{img/stock.png}}
+	   \begin{center}
+	   Affichage de tout le stock
+	   \end{center}
+	   \centerline{\includegraphics[scale=0.30]{img/afterRemoveProduct7.png}}
+	   \begin{center}
+	   Après suppression d'un produit
+	   \end{center}
+	   \centerline{\includegraphics[scale=0.30]{img/afterEdit11to7.png}}
+	   \begin{center}
+	   Après edite d'un produit
+	   \end{center}
+\end{document}
