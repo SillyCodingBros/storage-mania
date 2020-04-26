@@ -114,7 +114,7 @@ public class ProductDetailView {
                 controller.goAddProvider();
             }
         });
-        buttonImpress = new JButton("Impress");
+        buttonImpress = new JButton("Print");
         //buttonImpress.setToolTipText("A button for add a product");
 		buttonImpress.setPreferredSize(new Dimension(280, 100));
         buttonImpress.setForeground(new Color(255,153,0));
